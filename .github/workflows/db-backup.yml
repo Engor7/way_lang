@@ -10,6 +10,43 @@ jobs:
   backup:
     runs-on: ubuntu-latest
     steps:
+      # Диагностика: результат каждого шага показывает, какой секрет настроен неверно
+      - name: Check secret BACKUP_REPO is set
+        if: always()
+        env:
+          R: ${{ secrets.BACKUP_REPO }}
+        run: test -n "$R"
+
+      - name: Check BACKUP_REPO equals Engor7/way_lang-backups
+        if: always()
+        env:
+          R: ${{ secrets.BACKUP_REPO }}
+        run: test "$R" = "Engor7/way_lang-backups"
+
+      - name: Check secret BACKUP_REPO_TOKEN is set
+        if: always()
+        env:
+          T: ${{ secrets.BACKUP_REPO_TOKEN }}
+        run: test -n "$T"
+
+      - name: Check secret DATABASE_URL is set
+        if: always()
+        env:
+          D: ${{ secrets.DATABASE_URL }}
+        run: test -n "$D"
+
+      - name: Check token can access backup repo
+        if: always()
+        env:
+          T: ${{ secrets.BACKUP_REPO_TOKEN }}
+          R: ${{ secrets.BACKUP_REPO }}
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" \
+            -H "Authorization: Bearer $T" \
+            "https://api.github.com/repos/$R")
+          echo "HTTP $code (200=ok, 404=нет доступа или неверное имя, 401=токен невалиден)"
+          test "$code" = "200"
+
       - name: Install PostgreSQL 17 client
         run: |
           sudo install -d /usr/share/postgresql-common/pgdg
