@@ -71,10 +71,17 @@ jobs:
           # pg_dump должен ходить мимо пулера Neon — убираем -pooler из хоста
           psql "${DATABASE_URL/-pooler/}" -c "select 1"
 
+      - name: Check default pg_dump is version 17
+        if: always()
+        run: pg_dump --version | grep -q ' 17\.'
+
       - name: Dump database
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
+          # На раннере предустановлен клиент 16 — берём 17 по полному пути
+          export PATH="/usr/lib/postgresql/17/bin:$PATH"
+          pg_dump --version
           DATABASE_URL="${DATABASE_URL/-pooler/}"
           mkdir -p backup-repo/backups
           STAMP="$(date -u +%Y-%m-%d_%H%M)"
