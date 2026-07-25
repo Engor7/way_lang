@@ -1,0 +1,458 @@
+// Страницы курса: обзор, тренажёр, аудирование, супер-тест.
+// Один модуль на все роуты курса — вёрстка у них общая.
+
+%muted-sm {
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   color: var(--text-muted);
+}
+
+// ---------- Каркас страниц ----------
+
+// обзор курса (max-w-2xl); тренажёры и экзамен — узкие (max-w-xl)
+.page {
+   display: flex;
+   max-width: 42rem;
+   margin-inline: auto;
+   flex-direction: column;
+   gap: 2rem;
+   padding: 1rem;
+
+   @media (min-width: 640px) {
+      padding: 1.5rem;
+   }
+}
+
+.pageNarrow {
+   display: flex;
+   max-width: 36rem;
+   margin-inline: auto;
+   flex-direction: column;
+   gap: 1.5rem;
+   padding: 1rem;
+
+   @media (min-width: 640px) {
+      padding: 1.5rem;
+   }
+}
+
+.header {
+   display: flex;
+   flex-direction: column;
+   gap: 0.75rem;
+}
+
+// ссылка «На главную» в шапке обзора курса
+.backLink {
+   display: inline-flex;
+   align-items: center;
+   gap: 0.375rem;
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   color: var(--text-muted);
+
+   &:hover {
+      color: var(--text-hover);
+   }
+}
+
+.backArrow {
+   position: relative;
+   top: 0.5px;
+}
+
+.headerTight {
+   display: flex;
+   flex-direction: column;
+   gap: 0.25rem;
+}
+
+.title {
+   font-size: 1.5rem;
+   line-height: 2rem;
+   font-weight: 600;
+}
+
+.titleSm {
+   font-size: 1.25rem;
+   line-height: 1.75rem;
+   font-weight: 600;
+}
+
+.titleIcon {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+}
+
+.muted {
+   @extend %muted-sm;
+}
+
+.mutedBase {
+   color: var(--text-muted);
+}
+
+.centerMuted {
+   text-align: center;
+   color: var(--text-muted);
+}
+
+.note {
+   font-size: 0.75rem;
+   line-height: 1rem;
+   color: var(--text-faint);
+}
+
+.strong {
+   font-weight: 500;
+}
+
+// ---------- Секции обзора и экзамена ----------
+
+.section {
+   display: flex;
+   flex-direction: column;
+   gap: 0.75rem;
+}
+
+.sectionSm {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.sectionLg {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.sectionTitle {
+   font-weight: 500;
+}
+
+.rowBetween {
+   display: flex;
+   align-items: baseline;
+   justify-content: space-between;
+}
+
+// кнопки действий: колонка на мобиле, две колонки от sm
+.actions {
+   display: grid;
+   gap: 0.5rem;
+
+   @media (min-width: 640px) {
+      grid-template-columns: 1fr 1fr;
+   }
+}
+
+// «Сбросить и начать заново» — тянется на всю ячейку грида рядом с primary
+.fullBtn {
+   width: 100%;
+   height: 100%;
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+}
+
+// списки с разделителями (уровни, история попыток)
+.rowList {
+   > li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 0.5rem;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+   }
+
+   > li:first-child {
+      border-top: 0;
+   }
+}
+
+.levelDone {
+   font-weight: 500;
+   color: var(--success);
+}
+
+.stageList {
+   display: flex;
+   flex-direction: column;
+   gap: 0.25rem;
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   color: var(--text-muted);
+}
+
+// оценка супер-теста
+.grade {
+   font-size: 3rem;
+   line-height: 1;
+   font-weight: 600;
+}
+
+.gradeGood {
+   color: var(--success);
+}
+
+.gradeMid {
+   color: var(--warning);
+}
+
+.gradeBad {
+   color: var(--danger);
+}
+
+.resultBlock {
+   display: flex;
+   flex-direction: column;
+   gap: 0.25rem;
+   text-align: center;
+}
+
+// ---------- Тренажёр (тренировка / аудирование / этап теста) ----------
+
+.trainer {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.trainerTop {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.trainerMeta {
+   display: flex;
+   align-items: center;
+   gap: 1rem;
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   color: var(--text-muted);
+}
+
+.body {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+   padding-block: 1rem;
+}
+
+.questionWrap {
+   text-align: center;
+}
+
+.question {
+   font-size: 1.875rem;
+   line-height: 2.25rem;
+   font-weight: 600;
+   overflow-wrap: break-word;
+}
+
+.questionLong {
+   font-size: 1.375rem;
+   line-height: 1.875rem;
+}
+
+// формулировка задания над вопросом
+.task {
+   margin-bottom: 0.5rem;
+   font-size: 0.8125rem;
+   line-height: 1.125rem;
+   color: var(--text-muted);
+}
+
+.hint {
+   margin-top: 0.25rem;
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   color: var(--text-muted);
+}
+
+// примеры-подсказки под вопросом: показывают, куда встаёт форма
+.contextBlock {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+   margin-top: 0.875rem;
+   padding: 0.75rem;
+   border: 1px solid var(--border-subtle);
+   border-radius: 0.5rem;
+   text-align: left;
+}
+
+.contextLine {
+   display: flex;
+   flex-direction: column;
+   gap: 0.125rem;
+   font-size: 0.9375rem;
+   line-height: 1.375rem;
+}
+
+.contextNote {
+   font-size: 0.8125rem;
+   line-height: 1.125rem;
+   color: var(--text-muted);
+}
+
+// оборот флеш-карточки
+.cardBack {
+   padding-top: 1rem;
+   border-top: 1px solid var(--border-subtle);
+   text-align: center;
+   font-size: 1.5rem;
+   line-height: 2rem;
+}
+
+.flashcardBlock {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+// разбор глагола после ответа (тот же блок, что и на обороте карточки)
+.verbExplain {
+   margin-top: 0.5rem;
+}
+
+// оборот карточки глагола: формы + перевод + примеры в трёх временах
+.verbCard {
+   display: flex;
+   flex-direction: column;
+   gap: 0.375rem;
+   padding-top: 1rem;
+   border-top: 1px solid var(--border-subtle);
+   text-align: center;
+}
+
+.verbForms {
+   font-size: 1.5rem;
+   line-height: 2rem;
+   font-weight: 600;
+}
+
+.verbRu {
+   color: var(--text-muted);
+}
+
+.verbExamples {
+   display: flex;
+   flex-direction: column;
+   gap: 0.75rem;
+   margin-top: 0.75rem;
+   padding: 0;
+   list-style: none;
+   text-align: left;
+}
+
+.verbExample {
+   display: flex;
+   flex-direction: column;
+   gap: 0.125rem;
+}
+
+.verbTense {
+   font-size: 0.75rem;
+   line-height: 1.125rem;
+   color: var(--text-subtle);
+}
+
+.verbFormMark {
+   font-weight: 700;
+   color: var(--accent);
+}
+
+.verbExampleRu {
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   color: var(--text-muted);
+}
+
+.pair {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 0.5rem;
+}
+
+// варианты ответа «выбор из 4»
+.options {
+   display: grid;
+   gap: 0.5rem;
+}
+
+.option {
+   padding: 0.5rem 0.75rem;
+   border: 1px solid var(--border);
+   border-radius: 0.375rem;
+   text-align: left;
+   overflow-wrap: break-word;
+}
+
+.optionIdle:hover:not(:disabled) {
+   background: var(--surface-hover);
+}
+
+.optionDim:disabled {
+   opacity: 0.5;
+}
+
+.optionCorrect {
+   border-color: var(--success-border-strong);
+   background: var(--success-surface);
+}
+
+.optionWrong {
+   border-color: var(--danger-border-strong);
+   background: var(--danger-surface);
+}
+
+.optionFaded {
+   border-color: var(--border-subtle);
+   opacity: 0.6;
+}
+
+// ввод текста
+.typedForm {
+   display: flex;
+   flex-direction: column;
+   gap: 0.75rem;
+
+   .inputCorrect {
+      border-color: var(--success-border-strong);
+   }
+
+   .inputWrong {
+      border-color: var(--danger-border-strong);
+   }
+}
+
+.feedback {
+   text-align: center;
+   color: var(--success-loud);
+}
+
+// круглая кнопка «прослушать» в аудировании
+.listenBtn {
+   border-radius: 9999px;
+   padding: 1rem;
+}
+
+// экран завершённой сессии
+.done {
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+   padding-block: 1.5rem;
+   text-align: center;
+}
+
+.doneTitle {
+   font-size: 1.25rem;
+   line-height: 1.75rem;
+   font-weight: 600;
+}

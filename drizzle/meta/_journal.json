@@ -1,13 +1,41 @@
 {
-  "version": "7",
-  "dialect": "postgresql",
-  "entries": [
-    {
-      "idx": 0,
-      "version": "7",
-      "when": 1784977541878,
-      "tag": "0000_tense_the_spike",
-      "breakpoints": true
-    }
-  ]
+   "version": "7",
+   "dialect": "postgresql",
+   "entries": [
+      {
+         "idx": 0,
+         "version": "7",
+         "when": 1784977541878,
+         "tag": "0000_tense_the_spike",
+         "breakpoints": true
+      },
+      {
+         "idx": 1,
+         "version": "7",
+         "when": 1784981840425,
+         "tag": "0001_shiny_gressill",
+         "breakpoints": true
+      },
+      {
+         "idx": 2,
+         "version": "7",
+         "when": 1784985016254,
+         "tag": "0002_cynical_thunderball",
+         "breakpoints": true
+      },
+      {
+         "idx": 3,
+         "version": "7",
+         "when": 1784985030174,
+         "tag": "0003_spotty_mandrill",
+         "breakpoints": true
+      },
+      {
+         "idx": 4,
+         "version": "7",
+         "when": 1784986931915,
+         "tag": "0004_true_chronomancer",
+         "breakpoints": true
+      }
+   ]
 }

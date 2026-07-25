@@ -1,0 +1,198 @@
+// Главная: форма входа и дашборд (общий прогресс, статистика, список курсов)
+
+%muted-sm {
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   color: var(--text-muted);
+}
+
+%muted-xs {
+   font-size: 0.75rem;
+   line-height: 1rem;
+   color: var(--text-muted);
+}
+
+// ---------- Вход ----------
+
+.loginForm {
+   display: flex;
+   width: 100%;
+   max-width: 20rem;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.loginTitle {
+   text-align: center;
+   font-size: 2.25rem;
+   line-height: 2.5rem;
+   font-weight: 600;
+}
+
+.loginError {
+   text-align: center;
+   font-size: 0.875rem;
+   color: var(--danger);
+}
+
+// ---------- Дашборд ----------
+
+.page {
+   display: flex;
+   min-height: 100vh;
+   max-width: 28rem;
+   margin-inline: auto;
+   flex-direction: column;
+   justify-content: center;
+   gap: 2.5rem;
+   padding: 1rem;
+
+   @media (min-width: 640px) {
+      padding: 1.5rem;
+   }
+}
+
+.stats {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   text-align: center;
+}
+
+.percent {
+   font-size: 3.75rem;
+   line-height: 1;
+   font-weight: 600;
+   font-variant-numeric: tabular-nums;
+}
+
+.summary {
+   @extend %muted-sm;
+}
+
+.strong {
+   font-weight: 500;
+}
+
+// три колонки «Сегодня / Неделя / Месяц»
+.periods {
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+
+   > * + * {
+      border-left: 1px solid var(--border-subtle);
+   }
+}
+
+.period {
+   display: flex;
+   flex-direction: column;
+   gap: 0.25rem;
+   padding-inline: 0.5rem;
+}
+
+.periodLabel {
+   @extend %muted-xs;
+}
+
+.periodValue {
+   font-size: 1.125rem;
+   line-height: 1.75rem;
+   font-weight: 500;
+   font-variant-numeric: tabular-nums;
+}
+
+.periodLearned {
+   font-size: 0.75rem;
+   line-height: 1rem;
+   color: var(--success);
+}
+
+// график активности за 30 дней
+.chartBlock {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.chart {
+   display: flex;
+   height: 4rem;
+   align-items: flex-end;
+   gap: 2px;
+}
+
+.bar {
+   flex: 1;
+   border-radius: 0.25rem;
+   background: var(--border-subtle);
+}
+
+.barActive {
+   background: rgb(16 185 129 / 0.5);
+}
+
+.barToday {
+   background: var(--accent);
+}
+
+.chartCaption {
+   @extend %muted-xs;
+}
+
+// ---------- Курсы ----------
+
+.courses {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+}
+
+.courseLink {
+   display: block;
+}
+
+.courseRow {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 0.5rem;
+}
+
+.courseTitle {
+   font-weight: 500;
+}
+
+.courseDescription {
+   @extend %muted-sm;
+}
+
+.chevron {
+   flex-shrink: 0;
+   color: var(--text-subtle);
+   transition:
+      transform 0.15s,
+      color 0.15s;
+
+   .courseLink:hover & {
+      transform: translateX(2px);
+      color: var(--text-hover);
+   }
+}
+
+.courseProgress {
+   display: flex;
+   margin-top: 0.75rem;
+   flex-direction: column;
+   gap: 0.25rem;
+}
+
+.courseStats {
+   @extend %muted-xs;
+}
+
+.toggleWrap {
+   display: flex;
+   margin-top: 70px;
+   justify-content: center;
+}

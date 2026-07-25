@@ -6,7 +6,7 @@ Web app for learning and training English.
 
 - Next.js 16 (App Router) + React 19
 - TypeScript
-- Tailwind CSS v4 + SASS
+- SASS (SCSS modules + global tokens/reset)
 - next-themes (light / dark)
 - Biome (lint + format), Prettier (SCSS/CSS)
 - pnpm
@@ -27,5 +27,5 @@ pnpm format:prettier  # Prettier for SCSS/CSS
 ```
 src/
   app/        # App Router: pages, layouts, route handlers
-  style/      # global.css (Tailwind entry) + component-scoped *.module.scss
+  style/      # global.scss (tokens, reset, shared UI classes); page styles in *.module.scss
 ```

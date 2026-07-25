@@ -1,0 +1,223 @@
+// Админка: каркас, формы пользователей, модалка сброса курса, логин
+
+%muted-sm {
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   color: var(--text-muted);
+}
+
+// ---------- Каркас (layout) ----------
+
+.shell {
+   max-width: 56rem;
+   margin-inline: auto;
+   padding: 1rem;
+
+   @media (min-width: 640px) {
+      padding: 1.5rem;
+   }
+}
+
+.header {
+   display: flex;
+   margin-bottom: 1.5rem;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.title {
+   font-size: 1.25rem;
+   line-height: 1.75rem;
+   font-weight: 600;
+}
+
+// ---------- Страница пользователей ----------
+
+.stack {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+}
+
+.alert {
+   padding: 0.5rem 0.75rem;
+   border: 1px solid var(--danger-border);
+   border-radius: 0.375rem;
+   background: var(--danger-surface);
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   color: var(--danger-loud);
+}
+
+.sectionTitle {
+   margin-bottom: 0.75rem;
+   font-weight: 500;
+}
+
+.count {
+   color: var(--text-muted);
+}
+
+.empty {
+   @extend %muted-sm;
+}
+
+.createForm {
+   display: grid;
+   grid-template-columns: 1fr;
+   gap: 0.5rem;
+
+   @media (min-width: 640px) {
+      grid-template-columns: 2fr 2fr auto;
+   }
+}
+
+.userList {
+   display: flex;
+   flex-direction: column;
+   gap: 0.5rem;
+}
+
+.userCard {
+   padding: 0.75rem;
+   border: 1px solid var(--border-subtle);
+   border-radius: 0.5rem;
+}
+
+.userForm {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   align-items: center;
+   gap: 0.5rem;
+
+   @media (min-width: 640px) {
+      grid-template-columns: 2fr 2fr auto auto auto;
+   }
+}
+
+.mono {
+   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.date {
+   font-size: 0.75rem;
+   line-height: 1rem;
+   color: var(--text-muted);
+}
+
+// строка прогресса по курсу под формой пользователя
+.courseRow {
+   display: flex;
+   margin-top: 0.5rem;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: space-between;
+   gap: 0.5rem;
+   padding-top: 0.5rem;
+   border-top: 1px solid var(--surface-hover);
+   font-size: 0.75rem;
+   line-height: 1rem;
+   color: var(--text-muted);
+}
+
+// ---------- Модалка сброса курса ----------
+
+.resetBtn {
+   gap: 0.25rem;
+   padding: 0.25rem 0.5rem;
+}
+
+.overlay {
+   position: fixed;
+   inset: 0;
+   z-index: 50;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 1rem;
+   background: rgb(0 0 0 / 0.3);
+   backdrop-filter: blur(8px);
+}
+
+.scrim {
+   position: fixed;
+   inset: 0;
+   cursor: default;
+}
+
+.dialog {
+   position: relative;
+   display: flex;
+   width: 100%;
+   max-width: 24rem;
+   flex-direction: column;
+   gap: 1rem;
+   padding: 1.25rem;
+   border: 1px solid var(--panel-border);
+   border-radius: 0.5rem;
+   background: var(--panel-bg);
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.dialogTitle {
+   font-size: 1rem;
+   line-height: 1.5rem;
+   font-weight: 500;
+}
+
+.dialogText {
+   color: var(--text-muted);
+}
+
+.strong {
+   font-weight: 500;
+}
+
+.dialogActions {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 0.5rem;
+}
+
+// ---------- Логин ----------
+
+.loginCard {
+   display: flex;
+   width: 100%;
+   max-width: 20rem;
+   flex-direction: column;
+   gap: 1rem;
+   padding: 1.5rem;
+   border: 1px solid var(--border-subtle);
+   border-radius: 0.75rem;
+   box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.loginTitle {
+   font-size: 1.25rem;
+   line-height: 1.75rem;
+   font-weight: 600;
+}
+
+.remember {
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+}
+
+.checkbox {
+   width: 1rem;
+   height: 1rem;
+   accent-color: var(--btn-bg);
+}
+
+.error {
+   font-size: 0.875rem;
+   color: var(--danger);
+}

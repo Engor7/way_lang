@@ -1,0 +1,51 @@
+.toggle {
+   display: flex;
+   align-items: center;
+   gap: 0.375rem;
+   cursor: pointer;
+}
+
+// образец «Aa» акцентным шрифтом
+.sample {
+   font-family: var(--font-playfair-display), serif;
+   font-style: italic;
+   font-size: 0.875rem;
+   line-height: 1.25rem;
+   color: var(--text-faint);
+}
+
+.sampleOn {
+   color: var(--fg-strong);
+}
+
+.track {
+   position: relative;
+   width: 1.75rem;
+   height: 1rem;
+   border-radius: 9999px;
+   background: var(--border);
+   transition: background-color 0.15s;
+}
+
+.trackOn {
+   background: #404040;
+
+   @media (prefers-color-scheme: dark) {
+      background: #d4d4d4;
+   }
+}
+
+.knob {
+   position: absolute;
+   top: 2px;
+   left: 2px;
+   width: 0.75rem;
+   height: 0.75rem;
+   border-radius: 9999px;
+   background: var(--panel-bg);
+   transition: transform 0.15s;
+}
+
+.knobOn {
+   transform: translateX(0.75rem);
+}

@@ -1,14 +1,23 @@
 import type { Metadata, Viewport } from "next";
-import { Open_Sans } from "next/font/google";
+import { Open_Sans, Playfair_Display } from "next/font/google";
 import type { ReactNode } from "react";
 
-import "@/style/global.css";
+import "@/style/global.scss";
 
 const openSans = Open_Sans({
    subsets: ["latin", "cyrillic"],
    weight: ["300", "400", "500", "600", "700"],
    display: "swap",
    variable: "--font-open-sans",
+});
+
+// Акцентный шрифт: переменная --font-playfair-display + режим
+// «Playfair для текста вопроса» (тумблер SpeakableFontToggle)
+const playfair = Playfair_Display({
+   subsets: ["latin", "cyrillic"],
+   style: ["normal", "italic"],
+   display: "swap",
+   variable: "--font-playfair-display",
 });
 
 export const metadata: Metadata = {
@@ -32,7 +41,11 @@ export default function RootLayout({
    children: ReactNode;
 }>) {
    return (
-      <html lang="en" className={openSans.variable} suppressHydrationWarning>
+      <html
+         lang="en"
+         className={`${openSans.variable} ${playfair.variable}`}
+         suppressHydrationWarning
+      >
          <body>{children}</body>
       </html>
    );

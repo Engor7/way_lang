@@ -1,0 +1,63 @@
+{
+   "id": "ced9ee35-be50-4ba6-bf07-8134ff0df63b",
+   "prevId": "07400f68-53da-484c-adc4-99622d5a5526",
+   "version": "7",
+   "dialect": "postgresql",
+   "tables": {
+      "public.users": {
+         "name": "users",
+         "schema": "",
+         "columns": {
+            "id": {
+               "name": "id",
+               "type": "serial",
+               "primaryKey": true,
+               "notNull": true
+            },
+            "name": {
+               "name": "name",
+               "type": "text",
+               "primaryKey": false,
+               "notNull": true
+            },
+            "password": {
+               "name": "password",
+               "type": "text",
+               "primaryKey": false,
+               "notNull": true
+            },
+            "created_at": {
+               "name": "created_at",
+               "type": "timestamp with time zone",
+               "primaryKey": false,
+               "notNull": true,
+               "default": "now()"
+            }
+         },
+         "indexes": {},
+         "foreignKeys": {},
+         "compositePrimaryKeys": {},
+         "uniqueConstraints": {
+            "users_password_unique": {
+               "name": "users_password_unique",
+               "nullsNotDistinct": false,
+               "columns": ["password"]
+            }
+         },
+         "policies": {},
+         "checkConstraints": {},
+         "isRLSEnabled": false
+      }
+   },
+   "enums": {},
+   "schemas": {},
+   "sequences": {},
+   "roles": {},
+   "policies": {},
+   "views": {},
+   "_meta": {
+      "columns": {},
+      "schemas": {},
+      "tables": {}
+   }
+}
