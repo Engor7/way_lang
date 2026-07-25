@@ -63,10 +63,19 @@ jobs:
             "https://x-access-token:${{ secrets.BACKUP_REPO_TOKEN }}@github.com/${{ secrets.BACKUP_REPO }}.git" \
             backup-repo
 
+      - name: Check database connection
+        if: always()
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+        run: |
+          # pg_dump должен ходить мимо пулера Neon — убираем -pooler из хоста
+          psql "${DATABASE_URL/-pooler/}" -c "select 1"
+
       - name: Dump database
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
         run: |
+          DATABASE_URL="${DATABASE_URL/-pooler/}"
           mkdir -p backup-repo/backups
           STAMP="$(date -u +%Y-%m-%d_%H%M)"
           pg_dump "$DATABASE_URL" --format=custom --no-owner --no-privileges \
