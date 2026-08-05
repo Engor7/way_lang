@@ -5,8 +5,8 @@
 
 import { useEffect, useState, useTransition } from "react";
 import { Speakable } from "@/components/speakable";
-import { typedPlaceholder } from "@/content";
-import type { CourseId, Direction, QuestionKind } from "@/content/types";
+import { typedPlaceholder } from "@/content/placeholders";
+import type { CourseStyle, Direction, QuestionKind } from "@/content/types";
 import { speak, stopSpeech } from "@/lib/audio";
 import styles from "../../course.module.scss";
 import { submitExamStage } from "../actions";
@@ -21,14 +21,14 @@ export type StageQuestion = {
 };
 
 type Props = {
-   courseId: CourseId;
+   courseStyle: CourseStyle;
    attemptId: number;
    stageIndex: number;
    questions: StageQuestion[];
 };
 
 export function StageClient({
-   courseId,
+   courseStyle,
    attemptId,
    stageIndex,
    questions,
@@ -125,7 +125,7 @@ export function StageClient({
                      value={typed}
                      onChange={(e) => setTyped(e.target.value)}
                      placeholder={typedPlaceholder(
-                        courseId,
+                        courseStyle,
                         question.direction,
                      )}
                      // biome-ignore lint/a11y/noAutofocus: поле появляется по ходу теста, фокус ожидаем

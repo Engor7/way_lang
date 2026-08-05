@@ -1,4 +1,4 @@
-import { and, desc, eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { GraduationCap, RotateCcw } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -6,7 +6,6 @@ import { BackNav } from "@/components/back-nav";
 import { getCourse } from "@/content";
 import { db } from "@/db";
 import { examAttempts } from "@/db/schema";
-import { requireUser } from "@/lib/user-auth";
 import styles from "../course.module.scss";
 import { restartExam, startExam } from "./actions";
 
@@ -25,7 +24,6 @@ export default async function ExamPage({
 }: {
    params: Promise<{ courseId: string }>;
 }) {
-   const user = await requireUser();
    const { courseId } = await params;
    const course = getCourse(courseId);
    if (!course) {
@@ -35,12 +33,7 @@ export default async function ExamPage({
    const attempts = await db
       .select()
       .from(examAttempts)
-      .where(
-         and(
-            eq(examAttempts.userId, user.id),
-            eq(examAttempts.courseId, course.id),
-         ),
-      )
+      .where(eq(examAttempts.courseId, course.id))
       .orderBy(desc(examAttempts.startedAt));
 
    const active = attempts.find((a) => a.status === "in_progress");

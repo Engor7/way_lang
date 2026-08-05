@@ -10,8 +10,8 @@ import Link from "next/link";
 import { useEffect, useState, useTransition } from "react";
 import { BackNav } from "@/components/back-nav";
 import { Speakable } from "@/components/speakable";
-import { typedPlaceholder } from "@/content";
-import type { CourseId } from "@/content/types";
+import { typedPlaceholder } from "@/content/placeholders";
+import type { CourseId, CourseStyle } from "@/content/types";
 import {
    splitExample,
    type VerbCardData,
@@ -36,10 +36,11 @@ function isSpeakableEn(text: string): boolean {
 
 type Props = {
    courseId: CourseId;
+   courseStyle: CourseStyle;
    questions: SessionQuestion[];
 };
 
-export function Trainer({ courseId, questions }: Props) {
+export function Trainer({ courseId, courseStyle, questions }: Props) {
    const [queue, setQueue] = useState(questions);
    const [index, setIndex] = useState(0);
    const [flipped, setFlipped] = useState(false);
@@ -137,7 +138,8 @@ export function Trainer({ courseId, questions }: Props) {
 
    const progressLabel = `${Math.min(index + 1, queue.length)} / ${queue.length}`;
    // разбор глагола: оборот флеш-карточки и объяснение после каждого ответа
-   const verbCard = courseId === "verbs" ? verbCardOf(question.itemId) : null;
+   const verbCard =
+      courseStyle === "verbs" ? verbCardOf(question.itemId) : null;
 
    return (
       <div className={styles.trainer}>
@@ -292,7 +294,7 @@ export function Trainer({ courseId, questions }: Props) {
                      onChange={(e) => setTyped(e.target.value)}
                      placeholder={
                         question.placeholder ??
-                        typedPlaceholder(courseId, question.direction)
+                        typedPlaceholder(courseStyle, question.direction)
                      }
                      disabled={result !== null}
                      // biome-ignore lint/a11y/noAutofocus: поле появляется по ходу тренировки, фокус ожидаем

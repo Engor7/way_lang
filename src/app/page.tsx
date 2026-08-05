@@ -1,15 +1,14 @@
-import { and, eq, gte } from "drizzle-orm";
+import { gte } from "drizzle-orm";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
-import { loginUser } from "@/app/actions";
 import { SpeakableFontToggle } from "@/components/speakable-font-toggle";
 import { listCourses } from "@/content";
+import type { CourseGroup } from "@/content/types";
 import { db } from "@/db";
 import { dailyStats, itemProgress } from "@/db/schema";
 import { letterGrade } from "@/lib/exam";
 import { STAGE_LEARNED, summarize } from "@/lib/mastery";
 import { dailySeries, dayKey, periodStats } from "@/lib/stats";
-import { getSessionUser } from "@/lib/user-auth";
 import styles from "./home.module.scss";
 
 const PERIODS = [
@@ -17,6 +16,14 @@ const PERIODS = [
    { label: "Неделя", days: 7 },
    { label: "Месяц", days: 30 },
 ];
+
+// Порядок разделов на главной: курсов много, списком они не читаются
+const GROUPS: CourseGroup[] = ["Основа", "Слова", "Фразы", "Грамматика"];
+
+// Главная читает прогресс из SQLite на каждый запрос. Без этого Next
+// пререндерил бы её на сборке и показывал прогресс, «запечённый» в момент
+// билда (страницы курсов динамические сами по себе — из-за [courseId]).
+export const dynamic = "force-dynamic";
 
 const barDateFormat = new Intl.DateTimeFormat("ru-RU", {
    day: "numeric",
@@ -39,58 +46,34 @@ function compareToYesterday(today: number, yesterday: number): string {
       : `на ${yesterday - today} меньше, чем вчера`;
 }
 
-export default async function Home({
-   searchParams,
-}: {
-   searchParams: Promise<{ error?: string }>;
-}) {
-   const [user, { error }] = await Promise.all([
-      getSessionUser(),
-      searchParams,
-   ]);
-
-   if (!user) {
-      return (
-         <main className="screen-center">
-            <form action={loginUser} className={styles.loginForm}>
-               <h1 className={styles.loginTitle}>Way Lang</h1>
-               <input
-                  type="password"
-                  name="password"
-                  placeholder="Пароль"
-                  required
-                  className="input"
-               />
-               {error && <p className={styles.loginError}>Неверный пароль</p>}
-               <button type="submit" className="btn btn--primary btn--block">
-                  Войти
-               </button>
-            </form>
-         </main>
-      );
-   }
-
+export default async function Home() {
    const [rows, statRows] = await Promise.all([
-      db.select().from(itemProgress).where(eq(itemProgress.userId, user.id)),
+      db.select().from(itemProgress),
       db
          .select()
          .from(dailyStats)
-         .where(
-            and(
-               eq(dailyStats.userId, user.id),
-               gte(dailyStats.day, dayKey(new Date(), 29)),
-            ),
-         ),
+         .where(gte(dailyStats.day, dayKey(new Date(), 29))),
    ]);
 
-   const courses = listCourses();
-   const totalItems = courses.reduce(
-      (sum, course) => sum + summarize(course, []).total,
+   // Прогресс по каждому курсу считаем один раз: карточки группируются
+   // по разделам, а суммы нужны и разделу, и шапке.
+   const cards = listCourses().map((course) => {
+      const summary = summarize(
+         course,
+         rows.filter((row) => row.courseId === course.id),
+      );
+      return {
+         course,
+         summary,
+         percent: Math.round((100 * summary.learned) / summary.total),
+      };
+   });
+
+   const totalItems = cards.reduce((sum, card) => sum + card.summary.total, 0);
+   const learnedTotal = cards.reduce(
+      (sum, card) => sum + card.summary.learned,
       0,
    );
-   const learnedTotal = rows.filter(
-      (row) => row.stage === STAGE_LEARNED,
-   ).length;
    const overallPercent = Math.round((100 * learnedTotal) / totalItems);
 
    // Выучено за период — по learnedAt в границах московского дня
@@ -187,49 +170,61 @@ export default async function Home({
             </div>
          </section>
 
-         <section className={styles.courses}>
-            {courses.map((course) => {
-               const courseRows = rows.filter(
-                  (row) => row.courseId === course.id,
-               );
-               const summary = summarize(course, courseRows);
-               const percent = Math.round(
-                  (100 * summary.learned) / summary.total,
-               );
-               return (
-                  <Link
-                     key={course.id}
-                     href={`/course/${course.id}`}
-                     className={styles.courseLink}
-                  >
-                     <div className={styles.courseRow}>
-                        <div>
-                           <h3 className={styles.courseTitle}>
-                              {course.title}
-                           </h3>
-                           <p className={styles.courseDescription}>
-                              {course.description}
-                           </p>
-                        </div>
-                        <ChevronRight size={18} className={styles.chevron} />
-                     </div>
-                     <div className={styles.courseProgress}>
-                        <div className="progress-track">
-                           <div
-                              className="progress-fill"
-                              style={{ width: `${percent}%` }}
-                           />
-                        </div>
-                        <p className={styles.courseStats}>
-                           Выучено {summary.learned} из {summary.total}
-                           {summary.inProgress > 0 &&
-                              ` · в процессе ${summary.inProgress}`}
-                        </p>
-                     </div>
-                  </Link>
-               );
-            })}
-         </section>
+         {GROUPS.map((group) => {
+            const inGroup = cards.filter((card) => card.course.group === group);
+            if (inGroup.length === 0) {
+               return null;
+            }
+            const learned = inGroup.reduce((s, c) => s + c.summary.learned, 0);
+            const total = inGroup.reduce((s, c) => s + c.summary.total, 0);
+            return (
+               <section key={group} className={styles.group}>
+                  <div className={styles.groupHead}>
+                     <h2 className={styles.groupTitle}>{group}</h2>
+                     <span className={styles.groupCount}>
+                        {learned} / {total}
+                     </span>
+                  </div>
+                  <div className={styles.courses}>
+                     {inGroup.map(({ course, summary, percent }) => (
+                        <Link
+                           key={course.id}
+                           href={`/course/${course.id}`}
+                           className={styles.courseLink}
+                        >
+                           <div className={styles.courseRow}>
+                              <div>
+                                 <h3 className={styles.courseTitle}>
+                                    {course.title}
+                                 </h3>
+                                 <p className={styles.courseDescription}>
+                                    {course.description}
+                                 </p>
+                              </div>
+                              <ChevronRight
+                                 size={18}
+                                 className={styles.chevron}
+                              />
+                           </div>
+                           <div className={styles.courseProgress}>
+                              <div className="progress-track">
+                                 <div
+                                    className="progress-fill"
+                                    style={{ width: `${percent}%` }}
+                                 />
+                              </div>
+                              <p className={styles.courseStats}>
+                                 Выучено {summary.learned} из {summary.total}
+                                 {summary.inProgress > 0 &&
+                                    ` · в процессе ${summary.inProgress}`}
+                              </p>
+                           </div>
+                        </Link>
+                     ))}
+                  </div>
+               </section>
+            );
+         })}
 
          <div className={styles.toggleWrap}>
             <SpeakableFontToggle />

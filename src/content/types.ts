@@ -1,7 +1,20 @@
 // Типы учебного контента. Контент живёт в коде (src/content/*),
-// в БД хранится только прогресс пользователей по строковым id.
+// в БД хранится только прогресс по строковым id.
 
-export type CourseId = "numbers" | "top100" | "verbs";
+// Курсов много и они генерируются из morewords.txt, поэтому id — просто
+// строка (стабильный слаг, он же кусок URL: /course/<id>).
+export type CourseId = string;
+
+// Как устроен курс — от этого зависят вопросы, дистракторы и проверка ответа.
+// Раньше на эти три случая проверяли course.id; теперь это явное поле, и
+// новые словарные курсы просто берут "words".
+export type CourseStyle =
+   | "numbers" // prompt — цифры, answer — слова; проверка числительных
+   | "verbs" // своя система вопросов: формы, примеры, пропуски
+   | "words"; // prompt — английское слово/фраза, answer — русский перевод
+
+// Раздел на главной: курсов много, списком они не читаются.
+export type CourseGroup = "Основа" | "Слова" | "Фразы" | "Грамматика";
 
 // Тип вопроса в тренировке и экзамене
 export type QuestionKind =
@@ -32,6 +45,8 @@ export type Course = {
    id: CourseId;
    title: string;
    description: string;
+   group: CourseGroup;
+   style: CourseStyle;
    levels: Level[];
    examStages: number;
 };

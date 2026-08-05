@@ -1,4 +1,4 @@
-// Главная: форма входа и дашборд (общий прогресс, статистика, список курсов)
+// Главная: дашборд — общий прогресс, статистика, список курсов по разделам
 
 %muted-sm {
    font-size: 0.875rem;
@@ -10,29 +10,6 @@
    font-size: 0.75rem;
    line-height: 1rem;
    color: var(--text-muted);
-}
-
-// ---------- Вход ----------
-
-.loginForm {
-   display: flex;
-   width: 100%;
-   max-width: 20rem;
-   flex-direction: column;
-   gap: 1rem;
-}
-
-.loginTitle {
-   text-align: center;
-   font-size: 2.25rem;
-   line-height: 2.5rem;
-   font-weight: 600;
-}
-
-.loginError {
-   text-align: center;
-   font-size: 0.875rem;
-   color: var(--danger);
 }
 
 // ---------- Дашборд ----------
@@ -142,10 +119,40 @@
 
 // ---------- Курсы ----------
 
+// раздел: «Основа», «Слова», «Фразы», «Грамматика»
+.group {
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+}
+
+.groupHead {
+   display: flex;
+   align-items: baseline;
+   justify-content: space-between;
+   gap: 0.5rem;
+   padding-bottom: 0.5rem;
+   border-bottom: 1px solid var(--border-subtle);
+}
+
+.groupTitle {
+   font-size: 0.75rem;
+   line-height: 1rem;
+   font-weight: 600;
+   letter-spacing: 0.08em;
+   text-transform: uppercase;
+   color: var(--text-muted);
+}
+
+.groupCount {
+   @extend %muted-xs;
+   font-variant-numeric: tabular-nums;
+}
+
 .courses {
    display: flex;
    flex-direction: column;
-   gap: 2rem;
+   gap: 1.5rem;
 }
 
 .courseLink {

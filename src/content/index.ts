@@ -1,8 +1,10 @@
 // Доступ к учебному контенту: курсы, элементы, формирование вопросов
 // и проверка ответов. Единственная точка входа для остального кода.
 
-import { checkDigits, checkEnglishNumber, normalize } from "./number-words";
+import { checkDigits, checkEnglishNumber } from "./number-words";
 import { numbersCourse } from "./numbers-course";
+import { phrasesCourse } from "./phrases-course";
+import { normalizeText } from "./text";
 import { top100Course } from "./top100-course";
 import type {
    Course,
@@ -22,8 +24,18 @@ import {
    verbFormsDistractors,
    verbsCourse,
 } from "./verbs-course";
+import { vocabCourses } from "./vocab-courses";
 
-const COURSES: Course[] = [numbersCourse, top100Course, verbsCourse];
+// Три «ручных» курса впереди — они и есть основа; следом большой курс фраз
+// (см. scripts/build-phrases.ts), дальше тематические колоды из morewords.txt
+// (см. scripts/build-vocab.ts).
+const COURSES: Course[] = [
+   numbersCourse,
+   top100Course,
+   verbsCourse,
+   phrasesCourse,
+   ...vocabCourses,
+];
 
 const itemMaps = new Map<CourseId, Map<string, Item>>();
 for (const course of COURSES) {
@@ -67,12 +79,12 @@ export function levelOfItem(course: Course, itemId: string): Level | null {
 // «Английская» сторона элемента: у чисел это answer (words),
 // у слов — prompt (само слово).
 export function enSide(course: Course, item: Item): string {
-   return course.id === "numbers" ? item.answer : item.prompt;
+   return course.style === "numbers" ? item.answer : item.prompt;
 }
 
 // «Родная» сторона: цифры у чисел, русский перевод у слов.
 function nativeSide(course: Course, item: Item): string {
-   return course.id === "numbers" ? item.prompt : item.answer;
+   return course.style === "numbers" ? item.prompt : item.answer;
 }
 
 // Что показываем пользователю в вопросе
@@ -112,7 +124,7 @@ export function checkTypedAnswer(
    direction: Direction,
    input: string,
 ): boolean {
-   if (course.id === "numbers") {
+   if (course.style === "numbers") {
       const { value, ordinal } = parseNumberItem(item.id);
       if (direction === "to-en") {
          // «21-й» → допускаем и порядковое, и на всякий случай точное словами
@@ -120,23 +132,12 @@ export function checkTypedAnswer(
       }
       return checkDigits(value, input);
    }
-   if (course.id === "verbs") {
+   if (course.style === "verbs") {
       // глаголы без варианта (экзамен): ввод форм по базе
       return checkVerbForms(item.answer, input);
    }
-   // top100: свободный ввод только RU→EN
-   return normalize(input) === normalize(item.prompt);
-}
-
-// Плейсхолдер поля свободного ввода — зависит от курса и направления
-export function typedPlaceholder(
-   courseId: CourseId,
-   direction: Direction,
-): string {
-   if (courseId === "verbs") {
-      return "Вторая и третья формы";
-   }
-   return direction === "to-en" ? "Ответ по-английски" : "Ответ цифрами";
+   // слова и фразы: свободный ввод только RU→EN, сверка мягкая
+   return normalizeText(input) === normalizeText(item.prompt);
 }
 
 // ——— Вопросы по глаголам: варианты «перевод / формы / пропуск в примере» ———
@@ -173,7 +174,7 @@ export function checkVerbAnswer(
    }
    if (variant === "ru-en") {
       return ctx.kind === "typed"
-         ? normalize(input) === normalize(entry.base)
+         ? normalizeText(input) === normalizeText(entry.base)
          : input === entry.base;
    }
    return ctx.kind === "typed"
@@ -249,7 +250,7 @@ export function buildChoiceOptions(
    direction: Direction,
 ): string[] {
    // глаголы: дистракторы — испорченные формы этого же глагола
-   if (course.id === "verbs") {
+   if (course.style === "verbs") {
       const entry = verbEntryOf(item.id);
       if (entry) {
          const wrong = shuffle(verbFormsDistractors(entry)).slice(0, 3);
@@ -257,10 +258,17 @@ export function buildChoiceOptions(
       }
    }
    const correct = expectedAnswer(course, item, direction);
+   const asked = questionPrompt(course, item, direction);
    const level = levelOfItem(course, item.id);
+   // Синоним с тем же вопросом (trusty и reliable — оба «надёжный») дал бы
+   // второй верный вариант, который засчитали бы как ошибку.
    const toOptions = (items: Item[]) =>
       items
-         .filter((candidate) => candidate.id !== item.id)
+         .filter(
+            (candidate) =>
+               candidate.id !== item.id &&
+               questionPrompt(course, candidate, direction) !== asked,
+         )
          .map((candidate) => expectedAnswer(course, candidate, direction));
    // сначала соседи по уровню (похожие по сложности), затем добор из курса
    const pool = [

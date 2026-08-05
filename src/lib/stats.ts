@@ -16,15 +16,14 @@ export function dayKey(date = new Date(), daysAgo = 0): string {
 
 // Инкремент дневного счётчика одним upsert'ом
 export async function recordAnswers(
-   userId: number,
    answered: number,
    correct: number,
 ): Promise<void> {
    await db
       .insert(dailyStats)
-      .values({ userId, day: dayKey(), answered, correct })
+      .values({ day: dayKey(), answered, correct })
       .onConflictDoUpdate({
-         target: [dailyStats.userId, dailyStats.day],
+         target: dailyStats.day,
          set: {
             answered: sql`${dailyStats.answered} + ${answered}`,
             correct: sql`${dailyStats.correct} + ${correct}`,

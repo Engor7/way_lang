@@ -36,6 +36,8 @@ export const numbersCourse: Course = {
    id: "numbers",
    title: "Числа и числительные",
    description: "От нуля до триллиона: количественные и порядковые",
+   group: "Основа",
+   style: "numbers",
    examStages: 4,
    levels: [
       {

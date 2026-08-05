@@ -3,7 +3,6 @@
 import { enSide, expectedAnswer, getCourse, getItem } from "@/content";
 import { checkListeningAnswer, type ListeningKind } from "@/lib/listening";
 import { recordAnswers } from "@/lib/stats";
-import { requireUser } from "@/lib/user-auth";
 
 export type ListeningAnswer = {
    courseId: string;
@@ -22,7 +21,6 @@ export type ListeningResult = {
 export async function submitListeningAnswer(
    input: ListeningAnswer,
 ): Promise<ListeningResult> {
-   const user = await requireUser();
    const course = getCourse(input.courseId);
    const item = course ? getItem(course, input.itemId) : null;
    if (!course || !item) {
@@ -30,7 +28,7 @@ export async function submitListeningAnswer(
    }
 
    const correct = checkListeningAnswer(course, item, input.kind, input.answer);
-   await recordAnswers(user.id, 1, correct ? 1 : 0);
+   await recordAnswers(1, correct ? 1 : 0);
 
    return {
       correct,

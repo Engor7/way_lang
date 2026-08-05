@@ -26,11 +26,11 @@ export function buildExamPlan(course: Course): ExamPlan {
             const kind = i % 2 === 0 ? "choice" : "typed";
             // глаголы: всегда база → формы
             let direction: Direction =
-               course.id === "verbs" ? "from-en" : "to-en";
-            if (course.id === "top100" && kind === "choice") {
-               // слова: случайное направление в выборе
+               course.style === "verbs" ? "from-en" : "to-en";
+            if (course.style === "words" && kind === "choice") {
+               // слова и фразы: случайное направление в выборе
                direction = Math.random() < 0.5 ? "from-en" : "to-en";
-            } else if (course.id === "numbers" && kind === "typed") {
+            } else if (course.style === "numbers" && kind === "typed") {
                // ввод чисел — в обе стороны
                direction = Math.random() < 0.5 ? "from-en" : "to-en";
             }

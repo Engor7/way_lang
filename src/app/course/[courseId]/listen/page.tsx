@@ -1,11 +1,10 @@
-import { and, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import { BackNav } from "@/components/back-nav";
 import { getCourse } from "@/content";
 import { db } from "@/db";
 import { itemProgress } from "@/db/schema";
 import { buildListeningSession } from "@/lib/listening";
-import { requireUser } from "@/lib/user-auth";
 import styles from "../course.module.scss";
 import { ListeningTrainer } from "./listening-trainer";
 
@@ -14,7 +13,6 @@ export default async function ListenPage({
 }: {
    params: Promise<{ courseId: string }>;
 }) {
-   const user = await requireUser();
    const { courseId } = await params;
    const course = getCourse(courseId);
    if (!course) {
@@ -24,12 +22,7 @@ export default async function ListenPage({
    const rows = await db
       .select()
       .from(itemProgress)
-      .where(
-         and(
-            eq(itemProgress.userId, user.id),
-            eq(itemProgress.courseId, course.id),
-         ),
-      );
+      .where(eq(itemProgress.courseId, course.id));
 
    const questions = buildListeningSession(course, rows);
 

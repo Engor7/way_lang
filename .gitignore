@@ -13,6 +13,9 @@ dist
 .env*
 !.env.example
 
+# sqlite (данные пользователя, в репозиторий не едут)
+data
+
 # os
 .DS_Store
 Thumbs.db

@@ -13,17 +13,20 @@
       "db:migrate": "drizzle-kit migrate",
       "db:push": "drizzle-kit push",
       "db:studio": "drizzle-kit studio",
+      "vocab:build": "tsx scripts/build-vocab.ts",
+      "phrases:build": "tsx scripts/build-phrases.ts",
       "audio:generate": "tsx scripts/generate-audio.ts"
    },
    "pnpm": {
       "onlyBuiltDependencies": [
          "esbuild",
          "sharp",
-         "@parcel/watcher"
+         "@parcel/watcher",
+         "better-sqlite3"
       ]
    },
    "dependencies": {
-      "@neondatabase/serverless": "^1.1.0",
+      "better-sqlite3": "^13.0.1",
       "drizzle-orm": "^0.45.2",
       "lucide-react": "^1.8.0",
       "next": "16.2.3",
@@ -33,6 +36,7 @@
    },
    "devDependencies": {
       "@biomejs/biome": "^2.4.12",
+      "@types/better-sqlite3": "^7.6.13",
       "@types/node": "^20",
       "@types/react": "^19",
       "@types/react-dom": "^19",

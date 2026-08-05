@@ -8,7 +8,6 @@ import {
 } from "@/content";
 import { db } from "@/db";
 import { examAttempts } from "@/db/schema";
-import { requireUser } from "@/lib/user-auth";
 import styles from "../../course.module.scss";
 import { StageClient, type StageQuestion } from "./stage-client";
 
@@ -17,7 +16,6 @@ export default async function ExamStagePage({
 }: {
    params: Promise<{ courseId: string }>;
 }) {
-   const user = await requireUser();
    const { courseId } = await params;
    const course = getCourse(courseId);
    if (!course) {
@@ -29,7 +27,6 @@ export default async function ExamStagePage({
       .from(examAttempts)
       .where(
          and(
-            eq(examAttempts.userId, user.id),
             eq(examAttempts.courseId, course.id),
             eq(examAttempts.status, "in_progress"),
          ),
@@ -76,7 +73,7 @@ export default async function ExamStagePage({
             </p>
          </header>
          <StageClient
-            courseId={course.id}
+            courseStyle={course.style}
             attemptId={attempt.id}
             stageIndex={stageIndex}
             questions={questions}

@@ -1,0 +1,2440 @@
+{
+   "id": "phrases",
+   "title": "500 полезных фраз",
+   "description": "Готовые фразы на каждый день: от приветствий до аэропорта, врача и соцсетей",
+   "group": "Фразы",
+   "style": "words",
+   "examStages": 5,
+   "levels": [
+      {
+         "id": "l1",
+         "title": "Основные приветствия и прощания",
+         "items": [
+            {
+               "id": "p:hello",
+               "prompt": "Hello!",
+               "answer": "Привет!"
+            },
+            {
+               "id": "p:hi",
+               "prompt": "Hi!",
+               "answer": "Привет!"
+            },
+            {
+               "id": "p:hey",
+               "prompt": "Hey!",
+               "answer": "Привет!"
+            },
+            {
+               "id": "p:good-morning",
+               "prompt": "Good morning!",
+               "answer": "Доброе утро!"
+            },
+            {
+               "id": "p:good-afternoon",
+               "prompt": "Good afternoon!",
+               "answer": "Добрый день!"
+            },
+            {
+               "id": "p:good-evening",
+               "prompt": "Good evening!",
+               "answer": "Добрый вечер!"
+            },
+            {
+               "id": "p:how-are-you",
+               "prompt": "How are you?",
+               "answer": "Как дела?"
+            },
+            {
+               "id": "p:how-s-it-going",
+               "prompt": "How’s it going?",
+               "answer": "Как оно?"
+            },
+            {
+               "id": "p:how-have-you-been",
+               "prompt": "How have you been?",
+               "answer": "Как ты поживал?"
+            },
+            {
+               "id": "p:what-s-up",
+               "prompt": "What’s up?",
+               "answer": "Как дела? (неформально)"
+            },
+            {
+               "id": "p:nice-to-meet-you",
+               "prompt": "Nice to meet you.",
+               "answer": "Приятно познакомиться."
+            },
+            {
+               "id": "p:it-s-nice-to-see-you-again",
+               "prompt": "It’s nice to see you again.",
+               "answer": "Приятно снова тебя видеть."
+            },
+            {
+               "id": "p:long-time-no-see",
+               "prompt": "Long time no see!",
+               "answer": "Давно не виделись!"
+            },
+            {
+               "id": "p:see-you-later",
+               "prompt": "See you later.",
+               "answer": "Увидимся позже."
+            },
+            {
+               "id": "p:take-care",
+               "prompt": "Take care!",
+               "answer": "Береги себя!"
+            },
+            {
+               "id": "p:have-a-good-day",
+               "prompt": "Have a good day!",
+               "answer": "Хорошего дня!"
+            },
+            {
+               "id": "p:goodbye",
+               "prompt": "Goodbye!",
+               "answer": "До свидания!"
+            },
+            {
+               "id": "p:bye",
+               "prompt": "Bye!",
+               "answer": "Пока!"
+            },
+            {
+               "id": "p:see-you-soon",
+               "prompt": "See you soon.",
+               "answer": "До скорого."
+            },
+            {
+               "id": "p:catch-you-later",
+               "prompt": "Catch you later!",
+               "answer": "Увидимся позже!"
+            }
+         ]
+      },
+      {
+         "id": "l2",
+         "title": "Вежливые выражения",
+         "items": [
+            {
+               "id": "p:please",
+               "prompt": "Please.",
+               "answer": "Пожалуйста."
+            },
+            {
+               "id": "p:thank-you",
+               "prompt": "Thank you.",
+               "answer": "Спасибо."
+            },
+            {
+               "id": "p:thanks-a-lot",
+               "prompt": "Thanks a lot.",
+               "answer": "Большое спасибо."
+            },
+            {
+               "id": "p:you-re-welcome",
+               "prompt": "You’re welcome.",
+               "answer": "Не за что."
+            },
+            {
+               "id": "p:no-problem",
+               "prompt": "No problem.",
+               "answer": "Без проблем."
+            },
+            {
+               "id": "p:excuse-me",
+               "prompt": "Excuse me.",
+               "answer": "Извините (чтобы привлечь внимание)."
+            },
+            {
+               "id": "p:i-m-sorry",
+               "prompt": "I’m sorry.",
+               "answer": "Мне жаль."
+            },
+            {
+               "id": "p:my-apologies",
+               "prompt": "My apologies.",
+               "answer": "Мои извинения."
+            },
+            {
+               "id": "p:no-worries",
+               "prompt": "No worries.",
+               "answer": "Не переживай."
+            },
+            {
+               "id": "p:don-t-mention-it",
+               "prompt": "Don’t mention it.",
+               "answer": "Не стоит благодарности."
+            },
+            {
+               "id": "p:can-you-help-me-please",
+               "prompt": "Can you help me, please?",
+               "answer": "Вы можете мне помочь?"
+            },
+            {
+               "id": "p:could-you-repeat-that-please",
+               "prompt": "Could you repeat that, please?",
+               "answer": "Можете повторить, пожалуйста?"
+            },
+            {
+               "id": "p:may-i-ask-you-a-question",
+               "prompt": "May I ask you a question?",
+               "answer": "Можно задать вопрос?"
+            },
+            {
+               "id": "p:i-really-appreciate-it",
+               "prompt": "I really appreciate it.",
+               "answer": "Я очень ценю это."
+            },
+            {
+               "id": "p:i-m-very-grateful",
+               "prompt": "I’m very grateful.",
+               "answer": "Я очень благодарен."
+            },
+            {
+               "id": "p:it-s-very-kind-of-you",
+               "prompt": "It’s very kind of you.",
+               "answer": "Это очень любезно с вашей стороны."
+            },
+            {
+               "id": "p:sorry-for-the-inconvenience",
+               "prompt": "Sorry for the inconvenience.",
+               "answer": "Извините за неудобства."
+            },
+            {
+               "id": "p:i-didn-t-mean-to-offend-you",
+               "prompt": "I didn’t mean to offend you.",
+               "answer": "Я не хотел(а) вас обидеть."
+            },
+            {
+               "id": "p:i-hope-you-don-t-mind",
+               "prompt": "I hope you don’t mind.",
+               "answer": "Надеюсь, вы не против."
+            },
+            {
+               "id": "p:let-me-know-if-you-need-anything",
+               "prompt": "Let me know if you need anything.",
+               "answer": "Дайте знать, если что-то понадобится."
+            }
+         ]
+      },
+      {
+         "id": "l3",
+         "title": "Числа, время и даты",
+         "items": [
+            {
+               "id": "p:what-time-is-it",
+               "prompt": "What time is it?",
+               "answer": "Который час?"
+            },
+            {
+               "id": "p:it-s-five-o-clock",
+               "prompt": "It’s five o’clock.",
+               "answer": "Сейчас пять часов."
+            },
+            {
+               "id": "p:it-s-half-past-three",
+               "prompt": "It’s half past three.",
+               "answer": "Полчетвертого."
+            },
+            {
+               "id": "p:it-s-quarter-to-nine",
+               "prompt": "It’s quarter to nine.",
+               "answer": "Без четверти девять."
+            },
+            {
+               "id": "p:it-s-ten-past-six",
+               "prompt": "It’s ten past six.",
+               "answer": "Десять минут седьмого."
+            },
+            {
+               "id": "p:today-is-monday",
+               "prompt": "Today is Monday.",
+               "answer": "Сегодня понедельник."
+            },
+            {
+               "id": "p:tomorrow-is-tuesday",
+               "prompt": "Tomorrow is Tuesday.",
+               "answer": "Завтра вторник."
+            },
+            {
+               "id": "p:yesterday-was-sunday",
+               "prompt": "Yesterday was Sunday.",
+               "answer": "Вчера было воскресенье."
+            },
+            {
+               "id": "p:what-s-today-s-date",
+               "prompt": "What’s today’s date?",
+               "answer": "Какое сегодня число?"
+            },
+            {
+               "id": "p:it-s-march-28th",
+               "prompt": "It’s March 28th.",
+               "answer": "Сегодня 28 марта."
+            },
+            {
+               "id": "p:what-year-is-it",
+               "prompt": "What year is it?",
+               "answer": "Какой сейчас год?"
+            },
+            {
+               "id": "p:it-s-2025",
+               "prompt": "It’s 2025.",
+               "answer": "Сейчас 2025 год."
+            },
+            {
+               "id": "p:how-old-are-you",
+               "prompt": "How old are you?",
+               "answer": "Сколько тебе лет?"
+            },
+            {
+               "id": "p:i-m-twenty-one-years-old",
+               "prompt": "I’m twenty-one years old.",
+               "answer": "Мне 21 год."
+            },
+            {
+               "id": "p:see-you-in-five-minutes",
+               "prompt": "See you in five minutes.",
+               "answer": "Увидимся через пять минут."
+            },
+            {
+               "id": "p:i-ll-be-back-in-an-hour",
+               "prompt": "I’ll be back in an hour.",
+               "answer": "Я вернусь через час."
+            },
+            {
+               "id": "p:we-met-two-years-ago",
+               "prompt": "We met two years ago.",
+               "answer": "Мы встретились два года назад."
+            },
+            {
+               "id": "p:i-was-born-in-december",
+               "prompt": "I was born in December.",
+               "answer": "Я родился(ась) в декабре."
+            },
+            {
+               "id": "p:let-s-meet-at-noon",
+               "prompt": "Let’s meet at noon.",
+               "answer": "Давай встретимся в полдень."
+            },
+            {
+               "id": "p:the-store-closes-at-10-p-m",
+               "prompt": "The store closes at 10 p.m.",
+               "answer": "Магазин закрывается в 10 вечера."
+            }
+         ]
+      },
+      {
+         "id": "l4",
+         "title": "В ресторане или кафе",
+         "items": [
+            {
+               "id": "p:can-i-see-the-menu-please",
+               "prompt": "Can I see the menu, please?",
+               "answer": "Можно меню, пожалуйста?"
+            },
+            {
+               "id": "p:i-d-like-a-coffee",
+               "prompt": "I’d like a coffee.",
+               "answer": "Я бы хотел(а) кофе."
+            },
+            {
+               "id": "p:can-i-have-a-glass-of-water",
+               "prompt": "Can I have a glass of water?",
+               "answer": "Можно стакан воды?"
+            },
+            {
+               "id": "p:i-ll-have-a-sandwich",
+               "prompt": "I’ll have a sandwich.",
+               "answer": "Я возьму сэндвич."
+            },
+            {
+               "id": "p:what-do-you-recommend",
+               "prompt": "What do you recommend?",
+               "answer": "Что вы посоветуете?"
+            },
+            {
+               "id": "p:is-this-dish-spicy",
+               "prompt": "Is this dish spicy?",
+               "answer": "Это блюдо острое?"
+            },
+            {
+               "id": "p:i-have-an-allergy-to-nuts",
+               "prompt": "I have an allergy to nuts.",
+               "answer": "У меня аллергия на орехи."
+            },
+            {
+               "id": "p:no-onions-please",
+               "prompt": "No onions, please.",
+               "answer": "Без лука, пожалуйста."
+            },
+            {
+               "id": "p:could-you-bring-the-bill-please",
+               "prompt": "Could you bring the bill, please?",
+               "answer": "Можно счет, пожалуйста?"
+            },
+            {
+               "id": "p:keep-the-change",
+               "prompt": "Keep the change.",
+               "answer": "Сдачи не надо."
+            },
+            {
+               "id": "p:that-was-delicious",
+               "prompt": "That was delicious!",
+               "answer": "Это было вкусно!"
+            },
+            {
+               "id": "p:do-you-have-vegetarian-options",
+               "prompt": "Do you have vegetarian options?",
+               "answer": "У вас есть вегетарианские блюда?"
+            },
+            {
+               "id": "p:i-ll-take-the-same",
+               "prompt": "I’ll take the same.",
+               "answer": "Я возьму то же самое."
+            },
+            {
+               "id": "p:can-i-get-this-to-go",
+               "prompt": "Can I get this to go?",
+               "answer": "Можно с собой?"
+            },
+            {
+               "id": "p:how-long-will-it-take",
+               "prompt": "How long will it take?",
+               "answer": "Сколько это займет времени?"
+            },
+            {
+               "id": "p:we-d-like-to-sit-outside",
+               "prompt": "We’d like to sit outside.",
+               "answer": "Мы хотели бы сесть на улице."
+            },
+            {
+               "id": "p:the-service-was-excellent",
+               "prompt": "The service was excellent.",
+               "answer": "Обслуживание было отличное."
+            },
+            {
+               "id": "p:this-is-not-what-i-ordered",
+               "prompt": "This is not what I ordered.",
+               "answer": "Это не то, что я заказывал(а)."
+            },
+            {
+               "id": "p:can-i-have-a-receipt-please",
+               "prompt": "Can I have a receipt, please?",
+               "answer": "Можно чек, пожалуйста?"
+            },
+            {
+               "id": "p:the-food-took-too-long",
+               "prompt": "The food took too long.",
+               "answer": "Еду принесли слишком поздно."
+            }
+         ]
+      },
+      {
+         "id": "l5",
+         "title": "В магазине · 1",
+         "items": [
+            {
+               "id": "p:how-much-is-this",
+               "prompt": "How much is this?",
+               "answer": "Сколько это стоит?"
+            },
+            {
+               "id": "p:do-you-have-this-in-another-color",
+               "prompt": "Do you have this in another color?",
+               "answer": "У вас есть это в другом цвете?"
+            },
+            {
+               "id": "p:do-you-have-a-smaller-size",
+               "prompt": "Do you have a smaller size?",
+               "answer": "У вас есть размер поменьше?"
+            },
+            {
+               "id": "p:do-you-have-a-larger-size",
+               "prompt": "Do you have a larger size?",
+               "answer": "У вас есть размер побольше?"
+            },
+            {
+               "id": "p:i-m-just-looking-thanks",
+               "prompt": "I’m just looking, thanks.",
+               "answer": "Я просто смотрю, спасибо."
+            },
+            {
+               "id": "p:can-i-try-this-on",
+               "prompt": "Can I try this on?",
+               "answer": "Можно это примерить?"
+            },
+            {
+               "id": "p:where-is-the-fitting-room",
+               "prompt": "Where is the fitting room?",
+               "answer": "Где примерочная?"
+            },
+            {
+               "id": "p:it-s-too-expensive",
+               "prompt": "It’s too expensive.",
+               "answer": "Это слишком дорого."
+            },
+            {
+               "id": "p:do-you-have-a-discount-on-this",
+               "prompt": "Do you have a discount on this?",
+               "answer": "У вас есть скидка на это?"
+            },
+            {
+               "id": "p:i-ll-take-it",
+               "prompt": "I’ll take it.",
+               "answer": "Я возьму это."
+            },
+            {
+               "id": "p:can-i-pay-with-a-credit-card",
+               "prompt": "Can I pay with a credit card?",
+               "answer": "Можно оплатить кредитной картой?"
+            },
+            {
+               "id": "p:do-you-accept-cash",
+               "prompt": "Do you accept cash?",
+               "answer": "Вы принимаете наличные?"
+            },
+            {
+               "id": "p:can-i-get-a-receipt-please",
+               "prompt": "Can I get a receipt, please?",
+               "answer": "Можно чек, пожалуйста?"
+            },
+            {
+               "id": "p:i-d-like-to-return-this",
+               "prompt": "I’d like to return this.",
+               "answer": "Я хочу вернуть это."
+            },
+            {
+               "id": "p:it-doesn-t-fit-me",
+               "prompt": "It doesn’t fit me.",
+               "answer": "Это мне не подходит."
+            },
+            {
+               "id": "p:it-s-damaged",
+               "prompt": "It’s damaged.",
+               "answer": "Это повреждено."
+            },
+            {
+               "id": "p:can-i-exchange-this",
+               "prompt": "Can I exchange this?",
+               "answer": "Можно обменять это?"
+            },
+            {
+               "id": "p:where-is-the-checkout",
+               "prompt": "Where is the checkout?",
+               "answer": "Где касса?"
+            },
+            {
+               "id": "p:do-you-have-a-loyalty-program",
+               "prompt": "Do you have a loyalty program?",
+               "answer": "У вас есть программа лояльности?"
+            },
+            {
+               "id": "p:can-you-help-me-find-this-item",
+               "prompt": "Can you help me find this item?",
+               "answer": "Вы можете помочь мне найти этот товар?"
+            }
+         ]
+      },
+      {
+         "id": "l6",
+         "title": "В аэропорту · 1",
+         "items": [
+            {
+               "id": "p:where-is-the-check-in-counter",
+               "prompt": "Where is the check-in counter?",
+               "answer": "Где стойка регистрации?"
+            },
+            {
+               "id": "p:can-i-see-your-passport-and-ticket",
+               "prompt": "Can I see your passport and ticket?",
+               "answer": "Могу я увидеть ваш паспорт и билет?"
+            },
+            {
+               "id": "p:do-you-have-any-baggage-to-check-in",
+               "prompt": "Do you have any baggage to check in?",
+               "answer": "У вас есть багаж для сдачи?"
+            },
+            {
+               "id": "p:can-i-take-this-as-a-carry-on",
+               "prompt": "Can I take this as a carry-on?",
+               "answer": "Можно взять это в ручную кладь?"
+            },
+            {
+               "id": "p:what-s-the-weight-limit-for-luggage",
+               "prompt": "What’s the weight limit for luggage?",
+               "answer": "Какой лимит веса багажа?"
+            },
+            {
+               "id": "p:where-is-the-security-checkpoint",
+               "prompt": "Where is the security checkpoint?",
+               "answer": "Где контроль безопасности?"
+            },
+            {
+               "id": "p:do-i-need-to-take-off-my-shoes",
+               "prompt": "Do I need to take off my shoes?",
+               "answer": "Нужно ли снимать обувь?"
+            },
+            {
+               "id": "p:where-is-my-gate",
+               "prompt": "Where is my gate?",
+               "answer": "Где мой выход на посадку?"
+            },
+            {
+               "id": "p:is-my-flight-on-time",
+               "prompt": "Is my flight on time?",
+               "answer": "Мой рейс вовремя?"
+            },
+            {
+               "id": "p:my-flight-has-been-delayed",
+               "prompt": "My flight has been delayed.",
+               "answer": "Мой рейс задержан."
+            },
+            {
+               "id": "p:my-flight-has-been-canceled",
+               "prompt": "My flight has been canceled.",
+               "answer": "Мой рейс отменен."
+            },
+            {
+               "id": "p:where-is-the-baggage-claim",
+               "prompt": "Where is the baggage claim?",
+               "answer": "Где выдача багажа?"
+            },
+            {
+               "id": "p:my-baggage-is-missing",
+               "prompt": "My baggage is missing.",
+               "answer": "Мой багаж потерялся."
+            },
+            {
+               "id": "p:do-you-have-wi-fi-here",
+               "prompt": "Do you have Wi-Fi here?",
+               "answer": "У вас есть Wi-Fi?"
+            },
+            {
+               "id": "p:where-can-i-exchange-money",
+               "prompt": "Where can I exchange money?",
+               "answer": "Где я могу обменять деньги?"
+            },
+            {
+               "id": "p:where-is-the-nearest-restroom",
+               "prompt": "Where is the nearest restroom?",
+               "answer": "Где ближайший туалет?"
+            },
+            {
+               "id": "p:where-can-i-get-a-taxi",
+               "prompt": "Where can I get a taxi?",
+               "answer": "Где я могу взять такси?"
+            },
+            {
+               "id": "p:how-long-is-the-layover",
+               "prompt": "How long is the layover?",
+               "answer": "Сколько времени пересадка?"
+            },
+            {
+               "id": "p:can-i-change-my-seat",
+               "prompt": "Can I change my seat?",
+               "answer": "Можно поменять место?"
+            },
+            {
+               "id": "p:is-food-included-in-the-flight",
+               "prompt": "Is food included in the flight?",
+               "answer": "Еда включена в рейс?"
+            }
+         ]
+      },
+      {
+         "id": "l7",
+         "title": "В транспорте",
+         "items": [
+            {
+               "id": "p:where-is-the-nearest-bus-stop",
+               "prompt": "Where is the nearest bus stop?",
+               "answer": "Где ближайшая автобусная остановка?"
+            },
+            {
+               "id": "p:does-this-bus-go-to-the-city-center",
+               "prompt": "Does this bus go to the city center?",
+               "answer": "Этот автобус идет в центр города?"
+            },
+            {
+               "id": "p:how-much-is-a-ticket",
+               "prompt": "How much is a ticket?",
+               "answer": "Сколько стоит билет?"
+            },
+            {
+               "id": "p:where-can-i-buy-a-ticket",
+               "prompt": "Where can I buy a ticket?",
+               "answer": "Где я могу купить билет?"
+            },
+            {
+               "id": "p:what-time-is-the-next-train",
+               "prompt": "What time is the next train?",
+               "answer": "Когда следующий поезд?"
+            },
+            {
+               "id": "p:is-this-seat-taken",
+               "prompt": "Is this seat taken?",
+               "answer": "Это место занято?"
+            },
+            {
+               "id": "p:could-you-let-me-know-when-we-reach-my-stop",
+               "prompt": "Could you let me know when we reach my stop?",
+               "answer": "Скажите мне, когда будет моя остановка?"
+            },
+            {
+               "id": "p:how-long-does-the-journey-take",
+               "prompt": "How long does the journey take?",
+               "answer": "Сколько длится поездка?"
+            },
+            {
+               "id": "p:do-i-need-to-change-trains",
+               "prompt": "Do I need to change trains?",
+               "answer": "Мне нужно делать пересадку?"
+            },
+            {
+               "id": "p:where-is-the-subway-entrance",
+               "prompt": "Where is the subway entrance?",
+               "answer": "Где вход в метро?"
+            },
+            {
+               "id": "p:which-line-should-i-take",
+               "prompt": "Which line should I take?",
+               "answer": "Какую линию мне выбрать?"
+            },
+            {
+               "id": "p:does-this-train-go-to-the-airport",
+               "prompt": "Does this train go to the airport?",
+               "answer": "Этот поезд идет в аэропорт?"
+            },
+            {
+               "id": "p:is-this-the-right-platform-for-the-train-to-london",
+               "prompt": "Is this the right platform for the train to London?",
+               "answer": "Это правильная платформа для поезда в Лондон?"
+            },
+            {
+               "id": "p:when-does-the-last-bus-leave",
+               "prompt": "When does the last bus leave?",
+               "answer": "Когда отправляется последний автобус?"
+            },
+            {
+               "id": "p:could-you-call-me-a-taxi",
+               "prompt": "Could you call me a taxi?",
+               "answer": "Вы можете вызвать мне такси?"
+            },
+            {
+               "id": "p:how-much-is-the-fare",
+               "prompt": "How much is the fare?",
+               "answer": "Сколько стоит проезд?"
+            },
+            {
+               "id": "p:please-take-me-to-this-address",
+               "prompt": "Please take me to this address.",
+               "answer": "Отвезите меня по этому адресу."
+            },
+            {
+               "id": "p:do-you-accept-card-payments",
+               "prompt": "Do you accept card payments?",
+               "answer": "Вы принимаете карты?"
+            },
+            {
+               "id": "p:can-you-drive-a-little-faster",
+               "prompt": "Can you drive a little faster?",
+               "answer": "Можете ехать немного быстрее?"
+            },
+            {
+               "id": "p:please-stop-here",
+               "prompt": "Please stop here.",
+               "answer": "Остановите здесь, пожалуйста."
+            }
+         ]
+      },
+      {
+         "id": "l8",
+         "title": "В отеле",
+         "items": [
+            {
+               "id": "p:i-have-a-reservation-under-my-name",
+               "prompt": "I have a reservation under my name.",
+               "answer": "У меня бронь на мое имя."
+            },
+            {
+               "id": "p:do-you-have-any-available-rooms",
+               "prompt": "Do you have any available rooms?",
+               "answer": "У вас есть свободные номера?"
+            },
+            {
+               "id": "p:i-d-like-a-single-room",
+               "prompt": "I’d like a single room.",
+               "answer": "Я хочу одноместный номер."
+            },
+            {
+               "id": "p:i-d-like-a-double-room",
+               "prompt": "I’d like a double room.",
+               "answer": "Я хочу двухместный номер."
+            },
+            {
+               "id": "p:how-much-is-a-night",
+               "prompt": "How much is a night?",
+               "answer": "Сколько стоит ночь?"
+            },
+            {
+               "id": "p:does-the-room-have-a-private-bathroom",
+               "prompt": "Does the room have a private bathroom?",
+               "answer": "В номере есть отдельная ванная?"
+            },
+            {
+               "id": "p:is-breakfast-included",
+               "prompt": "Is breakfast included?",
+               "answer": "Завтрак включен?"
+            },
+            {
+               "id": "p:what-time-is-check-in",
+               "prompt": "What time is check-in?",
+               "answer": "Во сколько заезд?"
+            },
+            {
+               "id": "p:what-time-is-check-out",
+               "prompt": "What time is check-out?",
+               "answer": "Во сколько выезд?"
+            },
+            {
+               "id": "p:can-i-have-a-late-check-out",
+               "prompt": "Can I have a late check-out?",
+               "answer": "Можно поздний выезд?"
+            },
+            {
+               "id": "p:where-is-the-wi-fi-password",
+               "prompt": "Where is the Wi-Fi password?",
+               "answer": "Где пароль от Wi-Fi?"
+            },
+            {
+               "id": "p:can-i-get-an-extra-towel",
+               "prompt": "Can I get an extra towel?",
+               "answer": "Можно дополнительное полотенце?"
+            },
+            {
+               "id": "p:my-room-key-isn-t-working",
+               "prompt": "My room key isn’t working.",
+               "answer": "Мой ключ от номера не работает."
+            },
+            {
+               "id": "p:can-i-change-my-room",
+               "prompt": "Can I change my room?",
+               "answer": "Можно поменять номер?"
+            },
+            {
+               "id": "p:i-need-a-wake-up-call-at-7-a-m",
+               "prompt": "I need a wake-up call at 7 a.m.",
+               "answer": "Разбудите меня в 7 утра."
+            },
+            {
+               "id": "p:do-you-have-room-service",
+               "prompt": "Do you have room service?",
+               "answer": "У вас есть обслуживание номеров?"
+            },
+            {
+               "id": "p:where-is-the-nearest-restaurant",
+               "prompt": "Where is the nearest restaurant?",
+               "answer": "Где ближайший ресторан?"
+            },
+            {
+               "id": "p:can-you-call-me-a-taxi",
+               "prompt": "Can you call me a taxi?",
+               "answer": "Вы можете вызвать мне такси?"
+            },
+            {
+               "id": "p:the-air-conditioning-isn-t-working",
+               "prompt": "The air conditioning isn’t working.",
+               "answer": "Кондиционер не работает."
+            },
+            {
+               "id": "p:i-d-like-to-extend-my-stay",
+               "prompt": "I’d like to extend my stay.",
+               "answer": "Я хочу продлить пребывание."
+            }
+         ]
+      },
+      {
+         "id": "l9",
+         "title": "В экстренных ситуациях",
+         "items": [
+            {
+               "id": "p:help",
+               "prompt": "Help!",
+               "answer": "Помогите!"
+            },
+            {
+               "id": "p:call-the-police",
+               "prompt": "Call the police!",
+               "answer": "Вызовите полицию!"
+            },
+            {
+               "id": "p:i-need-an-ambulance",
+               "prompt": "I need an ambulance!",
+               "answer": "Мне нужна скорая помощь!"
+            },
+            {
+               "id": "p:there-s-been-an-accident",
+               "prompt": "There’s been an accident.",
+               "answer": "Произошел несчастный случай."
+            },
+            {
+               "id": "p:i-need-a-doctor",
+               "prompt": "I need a doctor.",
+               "answer": "Мне нужен врач."
+            },
+            {
+               "id": "p:i-ve-lost-my-passport",
+               "prompt": "I’ve lost my passport.",
+               "answer": "Я потерял(а) паспорт."
+            },
+            {
+               "id": "p:someone-stole-my-wallet",
+               "prompt": "Someone stole my wallet.",
+               "answer": "Кто-то украл мой кошелек."
+            },
+            {
+               "id": "p:i-m-lost",
+               "prompt": "I’m lost.",
+               "answer": "Я потерялся(ась)."
+            },
+            {
+               "id": "p:i-don-t-feel-well",
+               "prompt": "I don’t feel well.",
+               "answer": "Мне плохо."
+            },
+            {
+               "id": "p:where-is-the-nearest-hospital",
+               "prompt": "Where is the nearest hospital?",
+               "answer": "Где ближайшая больница?"
+            },
+            {
+               "id": "p:i-need-help-immediately",
+               "prompt": "I need help immediately!",
+               "answer": "Мне срочно нужна помощь!"
+            },
+            {
+               "id": "p:my-phone-was-stolen",
+               "prompt": "My phone was stolen.",
+               "answer": "У меня украли телефон."
+            },
+            {
+               "id": "p:i-ve-been-injured",
+               "prompt": "I’ve been injured.",
+               "answer": "Я получил(а) травму."
+            },
+            {
+               "id": "p:i-need-to-contact-my-embassy",
+               "prompt": "I need to contact my embassy.",
+               "answer": "Мне нужно связаться с моим посольством."
+            },
+            {
+               "id": "p:can-you-help-me-find-my-hotel",
+               "prompt": "Can you help me find my hotel?",
+               "answer": "Помогите найти мой отель?"
+            },
+            {
+               "id": "p:there-s-a-fire",
+               "prompt": "There’s a fire!",
+               "answer": "Пожар!"
+            },
+            {
+               "id": "p:i-need-a-translator",
+               "prompt": "I need a translator.",
+               "answer": "Мне нужен переводчик."
+            },
+            {
+               "id": "p:i-don-t-understand-what-s-happening",
+               "prompt": "I don’t understand what’s happening.",
+               "answer": "Я не понимаю, что происходит."
+            },
+            {
+               "id": "p:where-can-i-find-the-police-station",
+               "prompt": "Where can I find the police station?",
+               "answer": "Где находится полицейский участок?"
+            },
+            {
+               "id": "p:please-stay-with-me",
+               "prompt": "Please stay with me.",
+               "answer": "Пожалуйста, останьтесь со мной."
+            }
+         ]
+      },
+      {
+         "id": "l10",
+         "title": "Ежедневные разговорные фразы",
+         "items": [
+            {
+               "id": "p:what-s-your-name",
+               "prompt": "What’s your name?",
+               "answer": "Как тебя зовут?"
+            },
+            {
+               "id": "p:my-name-is",
+               "prompt": "My name is …",
+               "answer": "Меня зовут …"
+            },
+            {
+               "id": "p:where-are-you-from",
+               "prompt": "Where are you from?",
+               "answer": "Откуда ты?"
+            },
+            {
+               "id": "p:i-m-from-russia",
+               "prompt": "I’m from Russia.",
+               "answer": "Я из России."
+            },
+            {
+               "id": "p:i-m-21-years-old",
+               "prompt": "I’m 21 years old.",
+               "answer": "Мне 21 год."
+            },
+            {
+               "id": "p:what-do-you-do",
+               "prompt": "What do you do?",
+               "answer": "Чем ты занимаешься?"
+            },
+            {
+               "id": "p:i-m-a-student",
+               "prompt": "I’m a student.",
+               "answer": "Я студент(ка)."
+            },
+            {
+               "id": "p:what-are-your-hobbies",
+               "prompt": "What are your hobbies?",
+               "answer": "Какие у тебя хобби?"
+            },
+            {
+               "id": "p:i-like-reading-and-traveling",
+               "prompt": "I like reading and traveling.",
+               "answer": "Мне нравится читать и путешествовать."
+            },
+            {
+               "id": "p:do-you-have-any-siblings",
+               "prompt": "Do you have any siblings?",
+               "answer": "У тебя есть братья или сестры?"
+            },
+            {
+               "id": "p:i-have-a-brother-and-a-sister",
+               "prompt": "I have a brother and a sister.",
+               "answer": "У меня есть брат и сестра."
+            },
+            {
+               "id": "p:what-do-you-think",
+               "prompt": "What do you think?",
+               "answer": "Что ты думаешь?"
+            },
+            {
+               "id": "p:i-don-t-know",
+               "prompt": "I don’t know.",
+               "answer": "Я не знаю."
+            },
+            {
+               "id": "p:that-s-a-great-idea",
+               "prompt": "That’s a great idea!",
+               "answer": "Это отличная идея!"
+            },
+            {
+               "id": "p:i-completely-agree",
+               "prompt": "I completely agree.",
+               "answer": "Я полностью согласен(а)."
+            },
+            {
+               "id": "p:what-s-your-favorite-movie",
+               "prompt": "What’s your favorite movie?",
+               "answer": "Какой твой любимый фильм?"
+            },
+            {
+               "id": "p:i-love-watching-comedies",
+               "prompt": "I love watching comedies.",
+               "answer": "Я люблю смотреть комедии."
+            },
+            {
+               "id": "p:let-s-hang-out-this-weekend",
+               "prompt": "Let’s hang out this weekend.",
+               "answer": "Давай встретимся на выходных."
+            }
+         ]
+      },
+      {
+         "id": "l11",
+         "title": "Выражение мнения и эмоций",
+         "items": [
+            {
+               "id": "p:i-think-so",
+               "prompt": "I think so.",
+               "answer": "Я так думаю."
+            },
+            {
+               "id": "p:i-don-t-think-so",
+               "prompt": "I don’t think so.",
+               "answer": "Я так не думаю."
+            },
+            {
+               "id": "p:in-my-opinion",
+               "prompt": "In my opinion…",
+               "answer": "По моему мнению…"
+            },
+            {
+               "id": "p:i-totally-agree",
+               "prompt": "I totally agree.",
+               "answer": "Полностью согласен(а)."
+            },
+            {
+               "id": "p:i-completely-disagree",
+               "prompt": "I completely disagree.",
+               "answer": "Полностью не согласен(а)."
+            },
+            {
+               "id": "p:that-s-interesting",
+               "prompt": "That’s interesting!",
+               "answer": "Это интересно!"
+            },
+            {
+               "id": "p:that-s-amazing",
+               "prompt": "That’s amazing!",
+               "answer": "Это потрясающе!"
+            },
+            {
+               "id": "p:that-s-unbelievable",
+               "prompt": "That’s unbelievable!",
+               "answer": "Это невероятно!"
+            },
+            {
+               "id": "p:i-m-so-happy",
+               "prompt": "I’m so happy!",
+               "answer": "Я так счастлив(а)!"
+            },
+            {
+               "id": "p:i-m-excited",
+               "prompt": "I’m excited!",
+               "answer": "Я в восторге!"
+            },
+            {
+               "id": "p:i-m-tired",
+               "prompt": "I’m tired.",
+               "answer": "Я устал(а)."
+            },
+            {
+               "id": "p:i-m-bored",
+               "prompt": "I’m bored.",
+               "answer": "Мне скучно."
+            },
+            {
+               "id": "p:i-m-nervous",
+               "prompt": "I’m nervous.",
+               "answer": "Я нервничаю."
+            },
+            {
+               "id": "p:i-m-stressed-out",
+               "prompt": "I’m stressed out.",
+               "answer": "Я в стрессе."
+            },
+            {
+               "id": "p:i-m-confused",
+               "prompt": "I’m confused.",
+               "answer": "Я запутался(ась)."
+            },
+            {
+               "id": "p:i-m-surprised",
+               "prompt": "I’m surprised.",
+               "answer": "Я удивлен(а)."
+            },
+            {
+               "id": "p:i-feel-great",
+               "prompt": "I feel great!",
+               "answer": "Я чувствую себя отлично!"
+            },
+            {
+               "id": "p:i-feel-terrible",
+               "prompt": "I feel terrible.",
+               "answer": "Мне ужасно."
+            },
+            {
+               "id": "p:that-makes-me-sad",
+               "prompt": "That makes me sad.",
+               "answer": "Это меня расстраивает."
+            },
+            {
+               "id": "p:i-don-t-care",
+               "prompt": "I don’t care.",
+               "answer": "Мне все равно."
+            }
+         ]
+      },
+      {
+         "id": "l12",
+         "title": "Выражения согласия и несогласия",
+         "items": [
+            {
+               "id": "p:exactly",
+               "prompt": "Exactly!",
+               "answer": "Точно!"
+            },
+            {
+               "id": "p:that-s-right",
+               "prompt": "That’s right.",
+               "answer": "Это правильно."
+            },
+            {
+               "id": "p:that-makes-sense",
+               "prompt": "That makes sense.",
+               "answer": "Это логично."
+            },
+            {
+               "id": "p:i-see-what-you-mean",
+               "prompt": "I see what you mean.",
+               "answer": "Я понимаю, что ты имеешь в виду."
+            },
+            {
+               "id": "p:i-agree-with-you",
+               "prompt": "I agree with you.",
+               "answer": "Я согласен(а) с тобой."
+            },
+            {
+               "id": "p:i-don-t-agree-with-that",
+               "prompt": "I don’t agree with that.",
+               "answer": "Я с этим не согласен(а)."
+            },
+            {
+               "id": "p:that-s-not-true",
+               "prompt": "That’s not true.",
+               "answer": "Это неправда."
+            },
+            {
+               "id": "p:i-doubt-it",
+               "prompt": "I doubt it.",
+               "answer": "Я сомневаюсь."
+            },
+            {
+               "id": "p:i-m-not-sure-about-that",
+               "prompt": "I’m not sure about that.",
+               "answer": "Я не уверен(а) насчет этого."
+            },
+            {
+               "id": "p:maybe-you-re-right",
+               "prompt": "Maybe you’re right.",
+               "answer": "Возможно, ты прав(а)."
+            },
+            {
+               "id": "p:i-guess-so",
+               "prompt": "I guess so.",
+               "answer": "Думаю, да."
+            },
+            {
+               "id": "p:not-really",
+               "prompt": "Not really.",
+               "answer": "Не совсем."
+            },
+            {
+               "id": "p:absolutely-not",
+               "prompt": "Absolutely not!",
+               "answer": "Абсолютно нет!"
+            },
+            {
+               "id": "p:no-way",
+               "prompt": "No way!",
+               "answer": "Ни за что!"
+            },
+            {
+               "id": "p:it-depends",
+               "prompt": "It depends.",
+               "answer": "Зависит от обстоятельств."
+            },
+            {
+               "id": "p:that-s-debatable",
+               "prompt": "That’s debatable.",
+               "answer": "Это спорный вопрос."
+            },
+            {
+               "id": "p:you-might-be-right",
+               "prompt": "You might be right.",
+               "answer": "Возможно, ты прав(а)."
+            },
+            {
+               "id": "p:i-have-mixed-feelings-about-it",
+               "prompt": "I have mixed feelings about it.",
+               "answer": "У меня смешанные чувства по этому поводу."
+            },
+            {
+               "id": "p:let-s-agree-to-disagree",
+               "prompt": "Let’s agree to disagree.",
+               "answer": "Давай согласимся, что у нас разные мнения."
+            }
+         ]
+      },
+      {
+         "id": "l13",
+         "title": "Погода",
+         "items": [
+            {
+               "id": "p:what-s-the-weather-like-today",
+               "prompt": "What’s the weather like today?",
+               "answer": "Какая сегодня погода?"
+            },
+            {
+               "id": "p:it-s-sunny",
+               "prompt": "It’s sunny.",
+               "answer": "Солнечно."
+            },
+            {
+               "id": "p:it-s-raining",
+               "prompt": "It’s raining.",
+               "answer": "Идет дождь."
+            },
+            {
+               "id": "p:it-s-snowing",
+               "prompt": "It’s snowing.",
+               "answer": "Идет снег."
+            },
+            {
+               "id": "p:it-s-cloudy",
+               "prompt": "It’s cloudy.",
+               "answer": "Облачно."
+            },
+            {
+               "id": "p:it-s-windy",
+               "prompt": "It’s windy.",
+               "answer": "Ветрено."
+            },
+            {
+               "id": "p:it-s-hot-outside",
+               "prompt": "It’s hot outside.",
+               "answer": "На улице жарко."
+            },
+            {
+               "id": "p:it-s-cold-outside",
+               "prompt": "It’s cold outside.",
+               "answer": "На улице холодно."
+            },
+            {
+               "id": "p:it-s-freezing",
+               "prompt": "It’s freezing!",
+               "answer": "Мороз!"
+            },
+            {
+               "id": "p:it-s-warm-today",
+               "prompt": "It’s warm today.",
+               "answer": "Сегодня тепло."
+            },
+            {
+               "id": "p:it-s-humid",
+               "prompt": "It’s humid.",
+               "answer": "Влажно."
+            },
+            {
+               "id": "p:it-s-foggy",
+               "prompt": "It’s foggy.",
+               "answer": "Туманно."
+            },
+            {
+               "id": "p:it-s-stormy",
+               "prompt": "It’s stormy.",
+               "answer": "Буря."
+            },
+            {
+               "id": "p:there-s-a-thunderstorm",
+               "prompt": "There’s a thunderstorm.",
+               "answer": "Гроза."
+            },
+            {
+               "id": "p:it-s-drizzling",
+               "prompt": "It’s drizzling.",
+               "answer": "Моросит дождь."
+            },
+            {
+               "id": "p:the-sun-is-shining",
+               "prompt": "The sun is shining.",
+               "answer": "Светит солнце."
+            },
+            {
+               "id": "p:the-temperature-is-dropping",
+               "prompt": "The temperature is dropping.",
+               "answer": "Температура падает."
+            },
+            {
+               "id": "p:it-looks-like-rain",
+               "prompt": "It looks like rain.",
+               "answer": "Похоже, будет дождь."
+            },
+            {
+               "id": "p:it-s-a-beautiful-day",
+               "prompt": "It’s a beautiful day!",
+               "answer": "Прекрасный день!"
+            },
+            {
+               "id": "p:i-hope-it-doesn-t-rain",
+               "prompt": "I hope it doesn’t rain.",
+               "answer": "Надеюсь, дождя не будет."
+            }
+         ]
+      },
+      {
+         "id": "l14",
+         "title": "Разговор по телефону",
+         "items": [
+            {
+               "id": "p:hello-this-is-your-name",
+               "prompt": "Hello, this is (your name).",
+               "answer": "Привет, это (твое имя)."
+            },
+            {
+               "id": "p:can-i-speak-to-name-please",
+               "prompt": "Can I speak to (name), please?",
+               "answer": "Можно поговорить с (имя)?"
+            },
+            {
+               "id": "p:who-s-calling",
+               "prompt": "Who’s calling?",
+               "answer": "Кто звонит?"
+            },
+            {
+               "id": "p:it-s-your-name-speaking",
+               "prompt": "It’s (your name) speaking.",
+               "answer": "Это говорит (твое имя)."
+            },
+            {
+               "id": "p:hold-on-please",
+               "prompt": "Hold on, please.",
+               "answer": "Подождите, пожалуйста."
+            },
+            {
+               "id": "p:just-a-moment",
+               "prompt": "Just a moment.",
+               "answer": "Одну минуту."
+            },
+            {
+               "id": "p:i-ll-call-you-back",
+               "prompt": "I’ll call you back.",
+               "answer": "Я тебе перезвоню."
+            },
+            {
+               "id": "p:can-you-call-me-later",
+               "prompt": "Can you call me later?",
+               "answer": "Ты можешь мне перезвонить позже?"
+            },
+            {
+               "id": "p:the-line-is-busy",
+               "prompt": "The line is busy.",
+               "answer": "Линия занята."
+            },
+            {
+               "id": "p:i-can-t-hear-you-well",
+               "prompt": "I can’t hear you well.",
+               "answer": "Я плохо тебя слышу."
+            },
+            {
+               "id": "p:can-you-speak-louder",
+               "prompt": "Can you speak louder?",
+               "answer": "Можешь говорить громче?"
+            },
+            {
+               "id": "p:can-you-repeat-that",
+               "prompt": "Can you repeat that?",
+               "answer": "Можешь повторить?"
+            },
+            {
+               "id": "p:my-phone-is-about-to-die",
+               "prompt": "My phone is about to die.",
+               "answer": "Мой телефон скоро разрядится."
+            },
+            {
+               "id": "p:i-have-a-bad-connection",
+               "prompt": "I have a bad connection.",
+               "answer": "У меня плохая связь."
+            },
+            {
+               "id": "p:sorry-i-lost-you-for-a-second",
+               "prompt": "Sorry, I lost you for a second.",
+               "answer": "Прости, я тебя потерял(а) на секунду."
+            },
+            {
+               "id": "p:let-s-talk-later",
+               "prompt": "Let’s talk later.",
+               "answer": "Давай поговорим позже."
+            },
+            {
+               "id": "p:thanks-for-calling",
+               "prompt": "Thanks for calling!",
+               "answer": "Спасибо за звонок!"
+            },
+            {
+               "id": "p:i-need-to-hang-up-now",
+               "prompt": "I need to hang up now.",
+               "answer": "Мне нужно положить трубку."
+            },
+            {
+               "id": "p:talk-to-you-soon",
+               "prompt": "Talk to you soon!",
+               "answer": "Скоро поговорим!"
+            },
+            {
+               "id": "p:bye-for-now",
+               "prompt": "Bye for now!",
+               "answer": "Пока!"
+            }
+         ]
+      },
+      {
+         "id": "l15",
+         "title": "На работе",
+         "items": [
+            {
+               "id": "p:what-s-your-job",
+               "prompt": "What’s your job?",
+               "answer": "Чем ты занимаешься?"
+            },
+            {
+               "id": "p:i-work-in-marketing",
+               "prompt": "I work in marketing.",
+               "answer": "Я работаю в маркетинге."
+            },
+            {
+               "id": "p:i-have-a-meeting-at-10",
+               "prompt": "I have a meeting at 10.",
+               "answer": "У меня встреча в 10."
+            },
+            {
+               "id": "p:i-m-busy-right-now",
+               "prompt": "I’m busy right now.",
+               "answer": "Я сейчас занят(а)."
+            },
+            {
+               "id": "p:can-we-discuss-this-later",
+               "prompt": "Can we discuss this later?",
+               "answer": "Можем обсудить это позже?"
+            },
+            {
+               "id": "p:i-ll-send-you-an-email",
+               "prompt": "I’ll send you an email.",
+               "answer": "Я отправлю тебе email."
+            },
+            {
+               "id": "p:let-s-schedule-a-meeting",
+               "prompt": "Let’s schedule a meeting.",
+               "answer": "Давай назначим встречу."
+            },
+            {
+               "id": "p:i-need-to-finish-this-project",
+               "prompt": "I need to finish this project.",
+               "answer": "Мне нужно закончить этот проект."
+            },
+            {
+               "id": "p:can-you-help-me-with-this",
+               "prompt": "Can you help me with this?",
+               "answer": "Ты можешь мне помочь?"
+            },
+            {
+               "id": "p:let-s-take-a-break",
+               "prompt": "Let’s take a break.",
+               "answer": "Давай сделаем перерыв."
+            },
+            {
+               "id": "p:i-have-a-deadline-tomorrow",
+               "prompt": "I have a deadline tomorrow.",
+               "answer": "У меня дедлайн завтра."
+            },
+            {
+               "id": "p:i-m-working-on-it",
+               "prompt": "I’m working on it.",
+               "answer": "Я работаю над этим."
+            },
+            {
+               "id": "p:what-s-the-status-of-the-project",
+               "prompt": "What’s the status of the project?",
+               "answer": "Какой статус проекта?"
+            },
+            {
+               "id": "p:let-s-brainstorm-some-ideas",
+               "prompt": "Let’s brainstorm some ideas.",
+               "answer": "Давай придумаем идеи."
+            },
+            {
+               "id": "p:that-s-a-great-suggestion",
+               "prompt": "That’s a great suggestion!",
+               "answer": "Отличное предложение!"
+            },
+            {
+               "id": "p:i-ll-get-back-to-you-on-that",
+               "prompt": "I’ll get back to you on that.",
+               "answer": "Я вернусь к тебе с ответом."
+            },
+            {
+               "id": "p:i-ll-check-and-let-you-know",
+               "prompt": "I’ll check and let you know.",
+               "answer": "Я проверю и сообщу."
+            },
+            {
+               "id": "p:can-you-send-me-the-report",
+               "prompt": "Can you send me the report?",
+               "answer": "Можешь отправить мне отчет?"
+            },
+            {
+               "id": "p:i-ll-be-out-of-the-office-tomorrow",
+               "prompt": "I’ll be out of the office tomorrow.",
+               "answer": "Завтра меня не будет в офисе."
+            },
+            {
+               "id": "p:have-a-productive-day",
+               "prompt": "Have a productive day!",
+               "answer": "Продуктивного дня!"
+            }
+         ]
+      },
+      {
+         "id": "l16",
+         "title": "В ресторане",
+         "items": [
+            {
+               "id": "p:i-d-like-to-make-a-reservation",
+               "prompt": "I’d like to make a reservation.",
+               "answer": "Я хочу забронировать столик."
+            },
+            {
+               "id": "p:a-table-for-two-please",
+               "prompt": "A table for two, please.",
+               "answer": "Столик на двоих, пожалуйста."
+            },
+            {
+               "id": "p:can-i-see-the-menu",
+               "prompt": "Can I see the menu?",
+               "answer": "Можно меню?"
+            },
+            {
+               "id": "p:i-ll-have-the-steak-please",
+               "prompt": "I’ll have the steak, please.",
+               "answer": "Я возьму стейк, пожалуйста."
+            },
+            {
+               "id": "p:i-d-like-it-medium-rare",
+               "prompt": "I’d like it medium-rare.",
+               "answer": "Мне средней прожарки."
+            },
+            {
+               "id": "p:can-i-get-a-side-of-fries",
+               "prompt": "Can I get a side of fries?",
+               "answer": "Можно гарнир из картофеля фри?"
+            },
+            {
+               "id": "p:i-m-allergic-to-nuts",
+               "prompt": "I’m allergic to nuts.",
+               "answer": "У меня аллергия на орехи."
+            },
+            {
+               "id": "p:can-i-have-the-bill-please",
+               "prompt": "Can I have the bill, please?",
+               "answer": "Можно счет, пожалуйста?"
+            },
+            {
+               "id": "p:do-you-accept-credit-cards",
+               "prompt": "Do you accept credit cards?",
+               "answer": "Вы принимаете кредитные карты?"
+            },
+            {
+               "id": "p:the-food-was-delicious",
+               "prompt": "The food was delicious!",
+               "answer": "Еда была восхитительной!"
+            },
+            {
+               "id": "p:i-d-like-a-dessert",
+               "prompt": "I’d like a dessert.",
+               "answer": "Я хочу десерт."
+            },
+            {
+               "id": "p:this-isn-t-what-i-ordered",
+               "prompt": "This isn’t what I ordered.",
+               "answer": "Это не то, что я заказывал(а)."
+            },
+            {
+               "id": "p:the-check-please",
+               "prompt": "The check, please.",
+               "answer": "Счет, пожалуйста."
+            },
+            {
+               "id": "p:can-i-get-a-receipt",
+               "prompt": "Can I get a receipt?",
+               "answer": "Можно получить чек?"
+            },
+            {
+               "id": "p:do-you-have-any-specials-today",
+               "prompt": "Do you have any specials today?",
+               "answer": "У вас есть специальные блюда сегодня?"
+            },
+            {
+               "id": "p:i-d-like-to-pay-in-cash",
+               "prompt": "I’d like to pay in cash.",
+               "answer": "Я хочу заплатить наличными."
+            },
+            {
+               "id": "p:thank-you-everything-was-great",
+               "prompt": "Thank you, everything was great!",
+               "answer": "Спасибо, все было отлично!"
+            }
+         ]
+      },
+      {
+         "id": "l17",
+         "title": "В магазине · 2",
+         "items": [
+            {
+               "id": "p:how-much-does-this-cost",
+               "prompt": "How much does this cost?",
+               "answer": "Сколько это стоит?"
+            },
+            {
+               "id": "p:do-you-have-this-in-a-different-size",
+               "prompt": "Do you have this in a different size?",
+               "answer": "У вас есть это в другом размере?"
+            },
+            {
+               "id": "p:do-you-have-any-discounts",
+               "prompt": "Do you have any discounts?",
+               "answer": "У вас есть скидки?"
+            },
+            {
+               "id": "p:can-i-pay-by-card",
+               "prompt": "Can I pay by card?",
+               "answer": "Можно оплатить картой?"
+            },
+            {
+               "id": "p:do-you-sell-souvenirs",
+               "prompt": "Do you sell souvenirs?",
+               "answer": "У вас есть сувениры?"
+            },
+            {
+               "id": "p:this-is-too-small-big-for-me",
+               "prompt": "This is too small/big for me.",
+               "answer": "Это слишком маленькое/большое для меня."
+            },
+            {
+               "id": "p:do-you-have-this-in-stock",
+               "prompt": "Do you have this in stock?",
+               "answer": "У вас есть это в наличии?"
+            },
+            {
+               "id": "p:can-i-return-this",
+               "prompt": "Can I return this?",
+               "answer": "Можно это вернуть?"
+            },
+            {
+               "id": "p:i-d-like-a-bag-please",
+               "prompt": "I’d like a bag, please.",
+               "answer": "Можно пакет, пожалуйста?"
+            },
+            {
+               "id": "p:is-this-on-sale",
+               "prompt": "Is this on sale?",
+               "answer": "Это со скидкой?"
+            },
+            {
+               "id": "p:i-need-a-receipt",
+               "prompt": "I need a receipt.",
+               "answer": "Мне нужен чек."
+            },
+            {
+               "id": "p:can-you-gift-wrap-it",
+               "prompt": "Can you gift wrap it?",
+               "answer": "Можете упаковать как подарок?"
+            },
+            {
+               "id": "p:thank-you-for-your-help",
+               "prompt": "Thank you for your help!",
+               "answer": "Спасибо за вашу помощь!"
+            }
+         ]
+      },
+      {
+         "id": "l18",
+         "title": "В банке",
+         "items": [
+            {
+               "id": "p:i-d-like-to-open-an-account",
+               "prompt": "I’d like to open an account.",
+               "answer": "Я хочу открыть счет."
+            },
+            {
+               "id": "p:i-need-to-withdraw-money",
+               "prompt": "I need to withdraw money.",
+               "answer": "Мне нужно снять деньги."
+            },
+            {
+               "id": "p:i-d-like-to-deposit-money",
+               "prompt": "I’d like to deposit money.",
+               "answer": "Я хочу внести деньги на счет."
+            },
+            {
+               "id": "p:what-s-the-exchange-rate",
+               "prompt": "What’s the exchange rate?",
+               "answer": "Какой обменный курс?"
+            },
+            {
+               "id": "p:can-i-exchange-dollars-for-euros",
+               "prompt": "Can I exchange dollars for euros?",
+               "answer": "Можно обменять доллары на евро?"
+            },
+            {
+               "id": "p:where-is-the-nearest-atm",
+               "prompt": "Where is the nearest ATM?",
+               "answer": "Где ближайший банкомат?"
+            },
+            {
+               "id": "p:my-card-isn-t-working",
+               "prompt": "My card isn’t working.",
+               "answer": "Моя карта не работает."
+            },
+            {
+               "id": "p:i-lost-my-bank-card",
+               "prompt": "I lost my bank card.",
+               "answer": "Я потерял(а) свою банковскую карту."
+            },
+            {
+               "id": "p:i-need-to-transfer-money",
+               "prompt": "I need to transfer money.",
+               "answer": "Мне нужно перевести деньги."
+            },
+            {
+               "id": "p:i-d-like-to-speak-to-a-manager",
+               "prompt": "I’d like to speak to a manager.",
+               "answer": "Я хочу поговорить с менеджером."
+            },
+            {
+               "id": "p:what-are-the-bank-s-working-hours",
+               "prompt": "What are the bank’s working hours?",
+               "answer": "Какое рабочее время банка?"
+            },
+            {
+               "id": "p:is-there-a-fee-for-this-service",
+               "prompt": "Is there a fee for this service?",
+               "answer": "Есть комиссия за эту услугу?"
+            },
+            {
+               "id": "p:can-i-get-a-bank-statement",
+               "prompt": "Can I get a bank statement?",
+               "answer": "Можно получить выписку из банка?"
+            },
+            {
+               "id": "p:i-need-a-loan",
+               "prompt": "I need a loan.",
+               "answer": "Мне нужен кредит."
+            },
+            {
+               "id": "p:what-s-the-interest-rate",
+               "prompt": "What’s the interest rate?",
+               "answer": "Какой процент?"
+            },
+            {
+               "id": "p:do-you-offer-online-banking",
+               "prompt": "Do you offer online banking?",
+               "answer": "У вас есть интернет-банкинг?"
+            },
+            {
+               "id": "p:i-forgot-my-pin",
+               "prompt": "I forgot my PIN.",
+               "answer": "Я забыл(а) свой ПИН-код."
+            },
+            {
+               "id": "p:can-i-cancel-this-transaction",
+               "prompt": "Can I cancel this transaction?",
+               "answer": "Можно отменить эту транзакцию?"
+            },
+            {
+               "id": "p:i-need-to-report-a-fraudulent-transaction",
+               "prompt": "I need to report a fraudulent transaction.",
+               "answer": "Я хочу сообщить о мошеннической транзакции."
+            },
+            {
+               "id": "p:thank-you-for-your-assistance",
+               "prompt": "Thank you for your assistance.",
+               "answer": "Спасибо за вашу помощь."
+            }
+         ]
+      },
+      {
+         "id": "l19",
+         "title": "В аэропорту · 2",
+         "items": [
+            {
+               "id": "p:i-d-like-to-check-in",
+               "prompt": "I’d like to check in.",
+               "answer": "Я хочу зарегистрироваться."
+            },
+            {
+               "id": "p:do-you-have-any-baggage-to-check",
+               "prompt": "Do you have any baggage to check?",
+               "answer": "У вас есть багаж для сдачи?"
+            },
+            {
+               "id": "p:i-only-have-carry-on-luggage",
+               "prompt": "I only have carry-on luggage.",
+               "answer": "У меня только ручная кладь."
+            },
+            {
+               "id": "p:can-i-have-an-aisle-seat",
+               "prompt": "Can I have an aisle seat?",
+               "answer": "Можно место у прохода?"
+            },
+            {
+               "id": "p:can-i-have-a-window-seat",
+               "prompt": "Can I have a window seat?",
+               "answer": "Можно место у окна?"
+            },
+            {
+               "id": "p:where-is-the-passport-control",
+               "prompt": "Where is the passport control?",
+               "answer": "Где паспортный контроль?"
+            },
+            {
+               "id": "p:where-is-the-security-check",
+               "prompt": "Where is the security check?",
+               "answer": "Где контроль безопасности?"
+            },
+            {
+               "id": "p:can-i-get-a-boarding-pass",
+               "prompt": "Can I get a boarding pass?",
+               "answer": "Можно получить посадочный талон?"
+            },
+            {
+               "id": "p:what-time-is-boarding",
+               "prompt": "What time is boarding?",
+               "answer": "Во сколько посадка?"
+            },
+            {
+               "id": "p:do-i-need-to-remove-my-shoes",
+               "prompt": "Do I need to remove my shoes?",
+               "answer": "Мне нужно снять обувь?"
+            },
+            {
+               "id": "p:my-luggage-is-lost",
+               "prompt": "My luggage is lost.",
+               "answer": "Мой багаж потерян."
+            },
+            {
+               "id": "p:do-you-have-free-wi-fi",
+               "prompt": "Do you have free Wi-Fi?",
+               "answer": "У вас есть бесплатный Wi-Fi?"
+            },
+            {
+               "id": "p:where-is-the-nearest-lounge",
+               "prompt": "Where is the nearest lounge?",
+               "answer": "Где ближайший зал ожидания?"
+            }
+         ]
+      },
+      {
+         "id": "l20",
+         "title": "Туризм и достопримечательности",
+         "items": [
+            {
+               "id": "p:where-is-the-tourist-information-center",
+               "prompt": "Where is the tourist information center?",
+               "answer": "Где туристический информационный центр?"
+            },
+            {
+               "id": "p:can-i-get-a-map",
+               "prompt": "Can I get a map?",
+               "answer": "Можно карту?"
+            },
+            {
+               "id": "p:what-are-the-must-see-places-here",
+               "prompt": "What are the must-see places here?",
+               "answer": "Какие места здесь обязательно нужно посетить?"
+            },
+            {
+               "id": "p:is-there-a-guided-tour",
+               "prompt": "Is there a guided tour?",
+               "answer": "Есть экскурсия с гидом?"
+            },
+            {
+               "id": "p:how-much-is-the-entrance-fee",
+               "prompt": "How much is the entrance fee?",
+               "answer": "Сколько стоит входной билет?"
+            },
+            {
+               "id": "p:what-time-does-it-open-close",
+               "prompt": "What time does it open/close?",
+               "answer": "Во сколько открывается/закрывается?"
+            },
+            {
+               "id": "p:is-there-a-discount-for-students",
+               "prompt": "Is there a discount for students?",
+               "answer": "Есть скидка для студентов?"
+            },
+            {
+               "id": "p:can-i-take-pictures-here",
+               "prompt": "Can I take pictures here?",
+               "answer": "Можно здесь фотографировать?"
+            },
+            {
+               "id": "p:is-there-an-audio-guide-available",
+               "prompt": "Is there an audio guide available?",
+               "answer": "Есть аудиогид?"
+            },
+            {
+               "id": "p:how-do-i-get-to-this-place",
+               "prompt": "How do I get to this place?",
+               "answer": "Как добраться до этого места?"
+            },
+            {
+               "id": "p:what-s-the-best-time-to-visit",
+               "prompt": "What’s the best time to visit?",
+               "answer": "Когда лучшее время для посещения?"
+            },
+            {
+               "id": "p:are-there-any-events-happening-today",
+               "prompt": "Are there any events happening today?",
+               "answer": "Сегодня проходят какие-нибудь мероприятия?"
+            },
+            {
+               "id": "p:where-can-i-buy-souvenirs",
+               "prompt": "Where can I buy souvenirs?",
+               "answer": "Где можно купить сувениры?"
+            },
+            {
+               "id": "p:i-d-like-to-book-a-tour",
+               "prompt": "I’d like to book a tour.",
+               "answer": "Я хочу забронировать экскурсию."
+            },
+            {
+               "id": "p:do-you-have-a-city-pass",
+               "prompt": "Do you have a city pass?",
+               "answer": "У вас есть карта туриста?"
+            },
+            {
+               "id": "p:is-there-a-bus-tour-available",
+               "prompt": "Is there a bus tour available?",
+               "answer": "Есть экскурсионный автобус?"
+            },
+            {
+               "id": "p:can-i-rent-a-bike",
+               "prompt": "Can I rent a bike?",
+               "answer": "Можно взять велосипед напрокат?"
+            },
+            {
+               "id": "p:where-can-i-see-traditional-performances",
+               "prompt": "Where can I see traditional performances?",
+               "answer": "Где можно посмотреть традиционные выступления?"
+            },
+            {
+               "id": "p:thank-you-that-was-very-interesting",
+               "prompt": "Thank you, that was very interesting!",
+               "answer": "Спасибо, это было очень интересно!"
+            },
+            {
+               "id": "p:i-love-this-city",
+               "prompt": "I love this city!",
+               "answer": "Я обожаю этот город!"
+            }
+         ]
+      },
+      {
+         "id": "l21",
+         "title": "В гостинице",
+         "items": [
+            {
+               "id": "p:i-have-a-reservation",
+               "prompt": "I have a reservation.",
+               "answer": "У меня бронь."
+            },
+            {
+               "id": "p:i-d-like-a-single-double-room",
+               "prompt": "I’d like a single/double room.",
+               "answer": "Мне нужен одноместный/двухместный номер."
+            },
+            {
+               "id": "p:how-much-is-a-room-per-night",
+               "prompt": "How much is a room per night?",
+               "answer": "Сколько стоит номер за ночь?"
+            },
+            {
+               "id": "p:can-i-see-the-room-first",
+               "prompt": "Can I see the room first?",
+               "answer": "Можно сначала посмотреть номер?"
+            },
+            {
+               "id": "p:does-the-room-have-wi-fi",
+               "prompt": "Does the room have Wi-Fi?",
+               "answer": "В номере есть Wi-Fi?"
+            },
+            {
+               "id": "p:my-room-needs-cleaning",
+               "prompt": "My room needs cleaning.",
+               "answer": "Нужно убрать в моем номере."
+            },
+            {
+               "id": "p:there-is-no-hot-water",
+               "prompt": "There is no hot water.",
+               "answer": "Нет горячей воды."
+            },
+            {
+               "id": "p:i-lost-my-room-key",
+               "prompt": "I lost my room key.",
+               "answer": "Я потерял(а) ключ от номера."
+            },
+            {
+               "id": "p:where-is-the-gym",
+               "prompt": "Where is the gym?",
+               "answer": "Где тренажерный зал?"
+            },
+            {
+               "id": "p:i-need-a-wake-up-call",
+               "prompt": "I need a wake-up call.",
+               "answer": "Мне нужен звонок для пробуждения."
+            },
+            {
+               "id": "p:thank-you-for-the-great-service",
+               "prompt": "Thank you for the great service!",
+               "answer": "Спасибо за отличный сервис!"
+            }
+         ]
+      },
+      {
+         "id": "l22",
+         "title": "Разговор с врачом",
+         "items": [
+            {
+               "id": "p:i-need-to-see-a-doctor",
+               "prompt": "I need to see a doctor.",
+               "answer": "Мне нужно к врачу."
+            },
+            {
+               "id": "p:i-have-a-fever",
+               "prompt": "I have a fever.",
+               "answer": "У меня температура."
+            },
+            {
+               "id": "p:i-have-a-headache",
+               "prompt": "I have a headache.",
+               "answer": "У меня болит голова."
+            },
+            {
+               "id": "p:i-have-a-sore-throat",
+               "prompt": "I have a sore throat.",
+               "answer": "У меня болит горло."
+            },
+            {
+               "id": "p:i-have-a-cough",
+               "prompt": "I have a cough.",
+               "answer": "У меня кашель."
+            },
+            {
+               "id": "p:i-have-a-runny-nose",
+               "prompt": "I have a runny nose.",
+               "answer": "У меня насморк."
+            },
+            {
+               "id": "p:i-have-stomach-pain",
+               "prompt": "I have stomach pain.",
+               "answer": "У меня болит живот."
+            },
+            {
+               "id": "p:my-back-hurts",
+               "prompt": "My back hurts.",
+               "answer": "У меня болит спина."
+            },
+            {
+               "id": "p:i-feel-dizzy",
+               "prompt": "I feel dizzy.",
+               "answer": "У меня кружится голова."
+            },
+            {
+               "id": "p:i-think-i-have-an-infection",
+               "prompt": "I think I have an infection.",
+               "answer": "Думаю, у меня инфекция."
+            },
+            {
+               "id": "p:i-m-allergic-to-penicillin",
+               "prompt": "I’m allergic to penicillin.",
+               "answer": "У меня аллергия на пенициллин."
+            },
+            {
+               "id": "p:i-need-a-prescription",
+               "prompt": "I need a prescription.",
+               "answer": "Мне нужен рецепт."
+            },
+            {
+               "id": "p:where-is-the-nearest-pharmacy",
+               "prompt": "Where is the nearest pharmacy?",
+               "answer": "Где ближайшая аптека?"
+            },
+            {
+               "id": "p:do-i-need-to-take-medicine",
+               "prompt": "Do I need to take medicine?",
+               "answer": "Мне нужно принимать лекарства?"
+            },
+            {
+               "id": "p:how-long-will-it-take-to-recover",
+               "prompt": "How long will it take to recover?",
+               "answer": "Как долго будет длиться восстановление?"
+            },
+            {
+               "id": "p:is-it-contagious",
+               "prompt": "Is it contagious?",
+               "answer": "Это заразно?"
+            },
+            {
+               "id": "p:can-i-go-to-work-school",
+               "prompt": "Can I go to work/school?",
+               "answer": "Мне можно ходить на работу/учебу?"
+            },
+            {
+               "id": "p:i-need-a-medical-certificate",
+               "prompt": "I need a medical certificate.",
+               "answer": "Мне нужна медицинская справка."
+            },
+            {
+               "id": "p:thank-you-for-your-help-doctor",
+               "prompt": "Thank you for your help, doctor!",
+               "answer": "Спасибо за вашу помощь, доктор!"
+            }
+         ]
+      },
+      {
+         "id": "l23",
+         "title": "Экстренные ситуации",
+         "items": [
+            {
+               "id": "p:call-an-ambulance",
+               "prompt": "Call an ambulance!",
+               "answer": "Вызовите скорую помощь!"
+            },
+            {
+               "id": "p:i-ve-been-robbed",
+               "prompt": "I’ve been robbed.",
+               "answer": "Меня ограбили."
+            },
+            {
+               "id": "p:my-wallet-was-stolen",
+               "prompt": "My wallet was stolen.",
+               "answer": "У меня украли кошелек."
+            },
+            {
+               "id": "p:i-lost-my-passport",
+               "prompt": "I lost my passport.",
+               "answer": "Я потерял(а) паспорт."
+            },
+            {
+               "id": "p:i-need-help",
+               "prompt": "I need help.",
+               "answer": "Мне нужна помощь."
+            },
+            {
+               "id": "p:where-is-the-nearest-police-station",
+               "prompt": "Where is the nearest police station?",
+               "answer": "Где ближайший полицейский участок?"
+            },
+            {
+               "id": "p:i-don-t-feel-safe",
+               "prompt": "I don’t feel safe.",
+               "answer": "Я не чувствую себя в безопасности."
+            },
+            {
+               "id": "p:can-you-help-me",
+               "prompt": "Can you help me?",
+               "answer": "Вы можете мне помочь?"
+            },
+            {
+               "id": "p:i-need-to-call-my-embassy",
+               "prompt": "I need to call my embassy.",
+               "answer": "Мне нужно позвонить в посольство."
+            },
+            {
+               "id": "p:my-car-broke-down",
+               "prompt": "My car broke down.",
+               "answer": "Моя машина сломалась."
+            },
+            {
+               "id": "p:i-can-t-find-my-hotel",
+               "prompt": "I can’t find my hotel.",
+               "answer": "Я не могу найти свой отель."
+            }
+         ]
+      },
+      {
+         "id": "l24",
+         "title": "Выражения для общения в соцсетях",
+         "items": [
+            {
+               "id": "p:check-this-out",
+               "prompt": "Check this out!",
+               "answer": "Посмотри на это!"
+            },
+            {
+               "id": "p:lol-laughing-out-loud",
+               "prompt": "LOL (Laughing Out Loud)",
+               "answer": "Очень смешно!"
+            },
+            {
+               "id": "p:brb-be-right-back",
+               "prompt": "BRB (Be Right Back)",
+               "answer": "Скоро вернусь."
+            },
+            {
+               "id": "p:dm-me",
+               "prompt": "DM me.",
+               "answer": "Напиши мне в личку."
+            },
+            {
+               "id": "p:follow-me",
+               "prompt": "Follow me.",
+               "answer": "Подпишись на меня."
+            },
+            {
+               "id": "p:like-and-share",
+               "prompt": "Like and share!",
+               "answer": "Лайкни и поделись!"
+            },
+            {
+               "id": "p:this-is-trending",
+               "prompt": "This is trending!",
+               "answer": "Это в тренде!"
+            },
+            {
+               "id": "p:new-post-is-up",
+               "prompt": "New post is up!",
+               "answer": "Новый пост готов!"
+            },
+            {
+               "id": "p:let-s-go-viral",
+               "prompt": "Let’s go viral!",
+               "answer": "Давайте сделаем это вирусным!"
+            },
+            {
+               "id": "p:i-totally-relate",
+               "prompt": "I totally relate!",
+               "answer": "Это про меня!"
+            },
+            {
+               "id": "p:so-true",
+               "prompt": "So true!",
+               "answer": "Это правда!"
+            },
+            {
+               "id": "p:i-can-t-stop-laughing",
+               "prompt": "I can’t stop laughing!",
+               "answer": "Я не могу перестать смеяться!"
+            },
+            {
+               "id": "p:that-s-a-mood",
+               "prompt": "That’s a mood!",
+               "answer": "Это прямо в точку!"
+            },
+            {
+               "id": "p:i-m-obsessed-with-this",
+               "prompt": "I’m obsessed with this!",
+               "answer": "Я без ума от этого!"
+            },
+            {
+               "id": "p:this-made-my-day",
+               "prompt": "This made my day!",
+               "answer": "Это сделало мой день!"
+            },
+            {
+               "id": "p:can-t-believe-this",
+               "prompt": "Can’t believe this!",
+               "answer": "Не могу в это поверить!"
+            },
+            {
+               "id": "p:let-s-meet-irl-in-real-life",
+               "prompt": "Let’s meet IRL (In Real Life).",
+               "answer": "Давай встретимся в реальной жизни."
+            },
+            {
+               "id": "p:stay-tuned",
+               "prompt": "Stay tuned!",
+               "answer": "Следите за новостями!"
+            }
+         ]
+      },
+      {
+         "id": "l25",
+         "title": "Завершающие фразы",
+         "items": [
+            {
+               "id": "p:have-a-nice-day",
+               "prompt": "Have a nice day!",
+               "answer": "Хорошего дня!"
+            },
+            {
+               "id": "p:have-a-great-weekend",
+               "prompt": "Have a great weekend!",
+               "answer": "Отличных выходных!"
+            },
+            {
+               "id": "p:keep-in-touch",
+               "prompt": "Keep in touch!",
+               "answer": "Будь на связи!"
+            },
+            {
+               "id": "p:it-was-nice-talking-to-you",
+               "prompt": "It was nice talking to you.",
+               "answer": "Было приятно поговорить с тобой."
+            },
+            {
+               "id": "p:have-fun",
+               "prompt": "Have fun!",
+               "answer": "Веселись!"
+            },
+            {
+               "id": "p:enjoy-your-meal",
+               "prompt": "Enjoy your meal!",
+               "answer": "Приятного аппетита!"
+            },
+            {
+               "id": "p:enjoy-your-trip",
+               "prompt": "Enjoy your trip!",
+               "answer": "Приятного путешествия!"
+            },
+            {
+               "id": "p:safe-travels",
+               "prompt": "Safe travels!",
+               "answer": "Хорошей дороги!"
+            },
+            {
+               "id": "p:good-luck",
+               "prompt": "Good luck!",
+               "answer": "Удачи!"
+            },
+            {
+               "id": "p:best-wishes",
+               "prompt": "Best wishes!",
+               "answer": "Всего наилучшего!"
+            },
+            {
+               "id": "p:congratulations",
+               "prompt": "Congratulations!",
+               "answer": "Поздравляю!"
+            },
+            {
+               "id": "p:i-appreciate-it",
+               "prompt": "I appreciate it!",
+               "answer": "Я это ценю!"
+            },
+            {
+               "id": "p:you-re-the-best",
+               "prompt": "You’re the best!",
+               "answer": "Ты лучший(ая)!"
+            },
+            {
+               "id": "p:that-means-a-lot-to-me",
+               "prompt": "That means a lot to me.",
+               "answer": "Это много для меня значит."
+            },
+            {
+               "id": "p:i-ll-never-forget-this",
+               "prompt": "I’ll never forget this.",
+               "answer": "Я никогда этого не забуду."
+            },
+            {
+               "id": "p:thank-you-for-everything",
+               "prompt": "Thank you for everything!",
+               "answer": "Спасибо за всё!"
+            },
+            {
+               "id": "p:i-hope-i-always-meet-good-people",
+               "prompt": "I hope, i always meet good people",
+               "answer": "Я надеюсь, что всегда буду встречать хороших людей."
+            }
+         ]
+      }
+   ]
+}

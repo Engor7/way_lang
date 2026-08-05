@@ -1729,6 +1729,8 @@ export const verbsCourse: Course = {
    id: "verbs",
    title: "Три формы глагола",
    description: "125 глаголов: формы, перевод и примеры",
+   group: "Основа",
+   style: "verbs",
    examStages: 5,
    levels: [0, 1, 2, 3, 4].map((i) => ({
       id: `verbs-${i * 25 + 1}-${i * 25 + 25}`,

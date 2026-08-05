@@ -12,6 +12,8 @@ const securityHeaders = [
 
 const nextConfig: NextConfig = {
    devIndicators: false,
+   // нативный модуль — не бандлим, грузим из node_modules как есть
+   serverExternalPackages: ["better-sqlite3"],
    headers: async () => [
       {
          source: "/(.*)",

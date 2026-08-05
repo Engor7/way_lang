@@ -64,9 +64,16 @@ async function makeTts(): Promise<MsEdgeTTS> {
 }
 
 // Текст для синтеза: ключ манифеста — точная строка контента, но «went — gone»
-// и «was/were» должны звучать как перечисление, а не как «тире» и «слэш»
+// и «was/were» должны звучать как перечисление, а не как «тире» и «слэш»,
+// а многоточие-заполнитель («Would you mind …?») озвучивать нечем.
 function ttsTextFor(text: string): string {
-   return text.replace(/\s*—\s*/g, ", ").replace(/\//g, " or ");
+   return text
+      .replace(/\s*—\s*/g, ", ")
+      .replace(/\//g, " or ")
+      .replace(/…|\.\.\./g, " ")
+      .replace(/\s+([,.!?])/g, "$1")
+      .replace(/\s+/g, " ")
+      .trim();
 }
 
 async function main() {
@@ -79,7 +86,7 @@ async function main() {
             texts.set(text, fileNameFor(course.id, text));
          }
          // у глаголов озвучиваем и «оборотную» сторону — формы и примеры
-         if (course.id === "verbs") {
+         if (course.style === "verbs") {
             const entry = verbEntryOf(item.id);
             const extra = [
                item.answer,

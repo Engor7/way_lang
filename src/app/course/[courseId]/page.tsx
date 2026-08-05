@@ -1,4 +1,4 @@
-import { and, desc, eq } from "drizzle-orm";
+import { desc, eq } from "drizzle-orm";
 import { ArrowLeft, GraduationCap, Headphones, Play } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -6,7 +6,6 @@ import { getCourse } from "@/content";
 import { db } from "@/db";
 import { examAttempts, itemProgress } from "@/db/schema";
 import { levelBreakdown, summarize } from "@/lib/mastery";
-import { requireUser } from "@/lib/user-auth";
 import styles from "./course.module.scss";
 
 export default async function CoursePage({
@@ -14,7 +13,6 @@ export default async function CoursePage({
 }: {
    params: Promise<{ courseId: string }>;
 }) {
-   const user = await requireUser();
    const { courseId } = await params;
    const course = getCourse(courseId);
    if (!course) {
@@ -25,21 +23,11 @@ export default async function CoursePage({
       db
          .select()
          .from(itemProgress)
-         .where(
-            and(
-               eq(itemProgress.userId, user.id),
-               eq(itemProgress.courseId, course.id),
-            ),
-         ),
+         .where(eq(itemProgress.courseId, course.id)),
       db
          .select()
          .from(examAttempts)
-         .where(
-            and(
-               eq(examAttempts.userId, user.id),
-               eq(examAttempts.courseId, course.id),
-            ),
-         )
+         .where(eq(examAttempts.courseId, course.id))
          .orderBy(desc(examAttempts.startedAt)),
    ]);
 

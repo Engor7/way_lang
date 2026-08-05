@@ -16,7 +16,6 @@ import { db } from "@/db";
 import { itemProgress } from "@/db/schema";
 import { applyAnswer, NEW_ITEM, type ProgressState } from "@/lib/mastery";
 import { recordAnswers } from "@/lib/stats";
-import { requireUser } from "@/lib/user-auth";
 
 export type TrainingAnswer = {
    courseId: string;
@@ -39,7 +38,6 @@ export type TrainingResult = {
 export async function submitTrainingAnswer(
    input: TrainingAnswer,
 ): Promise<TrainingResult> {
-   const user = await requireUser();
    const course = getCourse(input.courseId);
    const item = course ? getItem(course, input.itemId) : null;
    if (!course || !item) {
@@ -71,7 +69,6 @@ export async function submitTrainingAnswer(
       .from(itemProgress)
       .where(
          and(
-            eq(itemProgress.userId, user.id),
             eq(itemProgress.courseId, course.id),
             eq(itemProgress.itemId, item.id),
          ),
@@ -83,21 +80,16 @@ export async function submitTrainingAnswer(
    await db
       .insert(itemProgress)
       .values({
-         userId: user.id,
          courseId: course.id,
          itemId: item.id,
          ...next,
          updatedAt: new Date(),
       })
       .onConflictDoUpdate({
-         target: [
-            itemProgress.userId,
-            itemProgress.courseId,
-            itemProgress.itemId,
-         ],
+         target: [itemProgress.courseId, itemProgress.itemId],
          set: { ...next, updatedAt: new Date() },
       });
-   await recordAnswers(user.id, 1, correct ? 1 : 0);
+   await recordAnswers(1, correct ? 1 : 0);
 
    return {
       correct,

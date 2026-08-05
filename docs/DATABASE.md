@@ -1,61 +1,43 @@
-# База данных: Neon + Drizzle + бэкапы
+# База данных: SQLite + Drizzle
 
 ## Что используется
 
-- **Neon** — serverless PostgreSQL, бесплатный тариф (0.5 GB), нативная интеграция с Vercel.
-- **Drizzle ORM** — схема в `src/db/schema.ts`, клиент в `src/db/index.ts`, миграции в `drizzle/`.
-- **Бэкапы** — GitHub Action (`.github/workflows/db-backup.yml`) ежедневно делает полный `pg_dump` и коммитит его в отдельный приватный репозиторий.
+- **SQLite** — обычный файл на диске, по умолчанию `data/way-lang.db` (в git не едет, см. `.gitignore`). Драйвер — `better-sqlite3`, синхронный, без сети и без внешних сервисов.
+- **Drizzle ORM** — схема в `src/db/schema.ts`, клиент в `src/db/index.ts`, миграции в `drizzle/` (коммитим).
 
-## Первичная настройка (один раз)
+Пользователь у приложения один — тот, кто его открыл. Ни таблицы пользователей, ни авторизации, ни `user_id` в таблицах нет.
 
-### 1. Создать базу Neon через Vercel
+## Настройка
 
-1. Vercel Dashboard → ваш проект → вкладка **Storage** → **Create Database** → **Neon** (Marketplace).
-2. Согласиться с бесплатным планом, выбрать регион (ближайший к пользователям, например `eu-central-1`).
-3. Vercel сам добавит `DATABASE_URL` в переменные окружения проекта.
+Никакой. При первом запуске `src/db/index.ts` создаёт папку `data/`, файл базы и **сам применяет миграции** из `drizzle/` — состояния «забыл выполнить `db:migrate`» не бывает.
 
-### 2. Локальное окружение
+Положить базу в другое место можно переменной `DATABASE_FILE` в `.env.local` (см. `.env.example`).
 
-```bash
-cp .env.example .env.local
-# вставить DATABASE_URL из Vercel (Settings → Environment Variables)
-# или: npx vercel env pull .env.local
-```
+## Что хранится
 
-### 3. Применить схему
+| Таблица         | Ключ                     | Зачем                                                             |
+| --------------- | ------------------------ | ----------------------------------------------------------------- |
+| `item_progress` | `(course_id, item_id)`   | стадия освоения элемента (0–3), серия, счётчики верных/неверных    |
+| `daily_stats`   | `day` («YYYY-MM-DD», МСК) | сколько ответов за день и сколько из них верных — график на главной |
+| `exam_attempts` | `id`                     | попытки супер-теста: план этапов и результаты (JSON в text-колонке) |
 
-```bash
-pnpm db:generate   # сгенерировать SQL-миграцию из src/db/schema.ts
-pnpm db:migrate    # применить к базе
-pnpm db:studio     # (опционально) веб-интерфейс для просмотра данных
-```
-
-### 4. Настроить бэкапы
-
-1. Создать **приватный** репозиторий для бэкапов, например `Engor7/way_lang-backups` (с README, чтобы была ветка `main`).
-2. Создать fine-grained PAT: GitHub → Settings → Developer settings → **Fine-grained tokens** → доступ только к репо бэкапов, permission **Contents: Read and write**.
-3. В репо `way_lang`: Settings → Secrets and variables → Actions → добавить секреты:
-   - `DATABASE_URL` — **direct** строка подключения Neon (та, что `DATABASE_URL_UNPOOLED`, хост без `-pooler`) — `pg_dump` должен ходить мимо пулера;
-   - `BACKUP_REPO` — `Engor7/way_lang-backups`;
-   - `BACKUP_REPO_TOKEN` — созданный PAT.
-4. Проверить вручную: вкладка **Actions** → workflow **DB Backup** → **Run workflow**.
-
-## Как это работает дальше
-
-- Каждый день в 03:00 UTC Action делает дамп (`pg_dump --format=custom`) и пушит его в `way_lang-backups/backups/way_lang-<дата>.dump`; свежая копия всегда лежит в `latest.dump`.
-- В рабочем дереве хранятся последние 30 дампов; более старые остаются в git-истории репозитория бэкапов.
-- Кроме того, у самого Neon на бесплатном тарифе есть point-in-time restore (история ~24 часа) — это защита от «ой, удалил не то», а дампы — долгосрочный полный бэкап.
-
-## Восстановление из бэкапа
-
-```bash
-# в пустую базу (создать новую в Neon или очистить текущую)
-pg_restore --no-owner --no-privileges --clean --if-exists \
-  --dbname="$DATABASE_URL" latest.dump
-```
+Курсы и элементы живут в коде (`src/content/`), в базе — только строковые id.
 
 ## Изменение схемы
 
 1. Правим `src/db/schema.ts`.
-2. `pnpm db:generate` → появится новая миграция в `drizzle/`.
-3. `pnpm db:migrate` — применить. Миграции коммитим в git.
+2. `pnpm db:generate` → новая миграция в `drizzle/`.
+3. Миграция применится при следующем старте приложения (или вручную: `pnpm db:migrate`).
+4. Миграции коммитим в git.
+
+`pnpm db:studio` — веб-интерфейс для просмотра данных.
+
+## Бэкапы
+
+База — один файл, поэтому бэкап это копия файла. Приложение должно быть остановлено (или используйте `.backup`, который работает и на живой базе):
+
+```bash
+sqlite3 data/way-lang.db ".backup 'backups/way-lang-$(date +%F).db'"
+```
+
+Восстановление — положить файл обратно в `data/way-lang.db` (заодно удалив `-wal` и `-shm` рядом).

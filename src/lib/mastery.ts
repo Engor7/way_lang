@@ -240,16 +240,15 @@ function questionForStage(
    item: Item,
    stage: number,
 ): SessionQuestion {
-   if (course.id === "verbs") {
+   if (course.style === "verbs") {
       return verbQuestion(course, item, stage);
    }
+   const isNumbers = course.style === "numbers";
    // Что озвучивать. Показ цифр — тот же английский контент («42» звучит как
    // "forty-two"), поэтому у чисел prompt озвучиваем всегда. У слов русский
    // prompt (to-en) молчит — озвучка выдала бы ответ перевода.
    const speakPrompt = (direction: Direction) =>
-      course.id === "numbers" || direction === "from-en"
-         ? enSide(course, item)
-         : undefined;
+      isNumbers || direction === "from-en" ? enSide(course, item) : undefined;
 
    if (stage === STAGE_FLASHCARD) {
       const en = enSide(course, item);
@@ -267,7 +266,7 @@ function questionForStage(
    if (stage === STAGE_CHOICE) {
       // числа: всегда цифры → слова; слова: случайное направление
       const direction: Direction =
-         course.id === "numbers" || Math.random() < 0.5 ? "to-en" : "from-en";
+         isNumbers || Math.random() < 0.5 ? "to-en" : "from-en";
       return {
          itemId: item.id,
          kind: "choice",
@@ -281,7 +280,7 @@ function questionForStage(
    }
    // ввод: числа — в обе стороны случайно, слова — только RU→EN
    const direction: Direction =
-      course.id === "numbers" && Math.random() < 0.5 ? "from-en" : "to-en";
+      isNumbers && Math.random() < 0.5 ? "from-en" : "to-en";
    return {
       itemId: item.id,
       kind: "typed",

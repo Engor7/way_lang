@@ -1,11 +1,10 @@
-import { and, eq } from "drizzle-orm";
+import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import { BackNav } from "@/components/back-nav";
 import { getCourse } from "@/content";
 import { db } from "@/db";
 import { itemProgress } from "@/db/schema";
 import { buildSession } from "@/lib/mastery";
-import { requireUser } from "@/lib/user-auth";
 import styles from "../course.module.scss";
 import { Trainer } from "./trainer";
 
@@ -14,7 +13,6 @@ export default async function TrainPage({
 }: {
    params: Promise<{ courseId: string }>;
 }) {
-   const user = await requireUser();
    const { courseId } = await params;
    const course = getCourse(courseId);
    if (!course) {
@@ -24,12 +22,7 @@ export default async function TrainPage({
    const rows = await db
       .select()
       .from(itemProgress)
-      .where(
-         and(
-            eq(itemProgress.userId, user.id),
-            eq(itemProgress.courseId, course.id),
-         ),
-      );
+      .where(eq(itemProgress.courseId, course.id));
 
    const questions = buildSession(course, rows);
 
@@ -43,7 +36,11 @@ export default async function TrainPage({
                <p className={styles.centerMuted}>Пока нечего тренировать.</p>
             </>
          ) : (
-            <Trainer courseId={course.id} questions={questions} />
+            <Trainer
+               courseId={course.id}
+               courseStyle={course.style}
+               questions={questions}
+            />
          )}
       </main>
    );

@@ -12,15 +12,13 @@ import {
    letterGrade,
 } from "@/lib/exam";
 import { recordAnswers } from "@/lib/stats";
-import { requireUser } from "@/lib/user-auth";
 
-async function findActiveAttempt(userId: number, courseId: string) {
+async function findActiveAttempt(courseId: string) {
    const [attempt] = await db
       .select()
       .from(examAttempts)
       .where(
          and(
-            eq(examAttempts.userId, userId),
             eq(examAttempts.courseId, courseId),
             eq(examAttempts.status, "in_progress"),
          ),
@@ -32,15 +30,13 @@ async function findActiveAttempt(userId: number, courseId: string) {
 
 // Начать супер-тест (или продолжить активную попытку)
 export async function startExam(formData: FormData): Promise<void> {
-   const user = await requireUser();
    const course = getCourse(String(formData.get("courseId")));
    if (!course) {
       return;
    }
-   const active = await findActiveAttempt(user.id, course.id);
+   const active = await findActiveAttempt(course.id);
    if (!active) {
       await db.insert(examAttempts).values({
-         userId: user.id,
          courseId: course.id,
          plan: buildExamPlan(course),
       });
@@ -50,7 +46,6 @@ export async function startExam(formData: FormData): Promise<void> {
 
 // Бросить активную попытку и начать заново
 export async function restartExam(formData: FormData): Promise<void> {
-   const user = await requireUser();
    const course = getCourse(String(formData.get("courseId")));
    if (!course) {
       return;
@@ -60,13 +55,11 @@ export async function restartExam(formData: FormData): Promise<void> {
       .set({ status: "abandoned", finishedAt: new Date() })
       .where(
          and(
-            eq(examAttempts.userId, user.id),
             eq(examAttempts.courseId, course.id),
             eq(examAttempts.status, "in_progress"),
          ),
       );
    await db.insert(examAttempts).values({
-      userId: user.id,
       courseId: course.id,
       plan: buildExamPlan(course),
    });
@@ -82,16 +75,10 @@ export type StageSubmission = {
 // Сдать этап целиком. Guard в WHERE (номер этапа + статус) защищает от
 // двойной отправки: повторный запрос просто ничего не обновит.
 export async function submitExamStage(input: StageSubmission): Promise<void> {
-   const user = await requireUser();
    const [attempt] = await db
       .select()
       .from(examAttempts)
-      .where(
-         and(
-            eq(examAttempts.id, input.attemptId),
-            eq(examAttempts.userId, user.id),
-         ),
-      )
+      .where(eq(examAttempts.id, input.attemptId))
       .limit(1);
    const course = attempt ? getCourse(attempt.courseId) : null;
    if (!attempt || !course || attempt.status !== "in_progress") {
@@ -124,10 +111,10 @@ export async function submitExamStage(input: StageSubmission): Promise<void> {
          and(
             eq(examAttempts.id, attempt.id),
             eq(examAttempts.status, "in_progress"),
-            sql`jsonb_array_length(${examAttempts.stageResults}) = ${input.stageIndex}`,
+            sql`json_array_length(${examAttempts.stageResults}) = ${input.stageIndex}`,
          ),
       );
-   await recordAnswers(user.id, total, correct);
+   await recordAnswers(total, correct);
 
    redirect(`/course/${course.id}/exam`);
 }

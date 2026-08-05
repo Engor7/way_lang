@@ -115,6 +115,8 @@ export const top100Course: Course = {
    id: "top100",
    title: "Топ-100 слов",
    description: "Сто самых частых английских слов",
+   group: "Основа",
+   style: "words",
    examStages: 4,
    levels: [0, 1, 2, 3].map((i) => ({
       id: `words-${i * 25 + 1}-${i * 25 + 25}`,

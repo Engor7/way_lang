@@ -15,11 +15,8 @@ import {
    shuffle,
    verbTranslationOptions,
 } from "@/content";
-import {
-   checkDigits,
-   checkEnglishNumber,
-   normalize,
-} from "@/content/number-words";
+import { checkDigits, checkEnglishNumber } from "@/content/number-words";
+import { normalizeText } from "@/content/text";
 import type { Course, Item } from "@/content/types";
 import { type ProgressRow, STAGE_CHOICE, STAGE_TYPED } from "@/lib/mastery";
 
@@ -42,7 +39,7 @@ function listeningQuestion(
 ): ListeningQuestion {
    // глаголы: на слух проверяем значение — варианты-переводы;
    // подсказку-перевод при этом не показываем (она и есть ответ)
-   const isVerbs = course.id === "verbs";
+   const isVerbs = course.style === "verbs";
    return {
       itemId: item.id,
       kind,
@@ -89,16 +86,16 @@ export function checkListeningAnswer(
    input: string,
 ): boolean {
    if (kind === "listening-choice") {
-      return course.id === "verbs"
+      return course.style === "verbs"
          ? input === (item.hint ?? "")
          : input === expectedAnswer(course, item, "from-en");
    }
    // диктант: числа принимаем и словами, и цифрами
-   if (course.id === "numbers") {
+   if (course.style === "numbers") {
       const { value, ordinal } = parseNumberItem(item.id);
       return (
          checkEnglishNumber(value, input, ordinal) || checkDigits(value, input)
       );
    }
-   return normalize(input) === normalize(item.prompt);
+   return normalizeText(input) === normalizeText(item.prompt);
 }
