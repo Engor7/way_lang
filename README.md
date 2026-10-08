@@ -1,1 +1,1 @@
-# Way Lang
+Way Lang
